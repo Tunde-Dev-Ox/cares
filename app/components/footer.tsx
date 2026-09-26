@@ -38,9 +38,9 @@ export function Footer() {
           {/* Social icons */}
           <div className="flex gap-4 mt-5">
             {[
-              { icon: <FaXTwitter />, href: "#", label: "Twitter / X" },
-              { icon: <FaFacebookF />, href: "#", label: "Facebook" },
-              { icon: <FaInstagram />, href: "#", label: "Instagram" },
+              { icon: <FaXTwitter />, href: "https://x.com/apccares", label: "Twitter / X" },
+              { icon: <FaFacebookF />, href: "https://web.facebook.com/profile.php?id=61594507993276", label: "Facebook" },
+              { icon: <FaInstagram />, href: "https://www.instagram.com/apccares/", label: "Instagram" },
             ].map(({ icon, href, label }) => (
               <a
                 key={label}
