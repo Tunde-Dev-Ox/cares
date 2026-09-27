@@ -113,6 +113,28 @@ export const teamMembersData: TeamMember[] = [
     Gbolahan Magbagbeola is a seasoned administrator, educator and public servant with nearly four decades of experience across government, education and faith-based organisations. He serves as a National Executive Committee member of APC CARES and coordinates its Education Wing. His public service career includes serving as Personal Assistant to the Honourable Minister of State for Education (1994–1996) and as Senior Legislative Assistant at the Nigerian National Assembly (2003–2007). 
     
     In these roles, he supported policy research, drafted legislation and briefings, managed stakeholder relationships, and served as a liaison between lawmakers and their constituents. Since 2009, he has served as Co-Proprietor and Administrator of Potter's Place Nursery & Primary School in Abeokuta, guiding its strategic direction, staff development and community partnerships. He began his career as an English Language teacher in Ibadan and is the author of Civic Education for Senior Secondary Schools (Books 1–3), published by Melrose Publishers. A graduate of French from the University of Ibadan, Mr. Magbagbeola brings political acumen, policy expertise and a lifelong commitment to education and capacity building to his work with APC CARES.`,
+  },
+  {
+    id: "suleman-ozemoka",
+    name: "Dr. Suleman Shaibu Ozemoka, MBBS, MPH, FWACP",
+    role: "Consultant Family Physician",
+    image: "/suleiman.jpeg",
+    extendedBio: `
+    **Dr. Suleman Shaibu Ozemoka** is a Consultant Family Physician with more than 20 years of experience across clinical medicine and public health. 
+    
+    He currently serves with the Edo State Hospitals Management Agency in the Department of Family Medicine at Edo Specialist Hospital, Benin City, where he manages patients at the General Outpatient Clinic and mentors resident doctors. His career has centred on delivering quality, patient-centred care in resource-limited settings. 
+    
+    Before his current role, he spent over a decade in family medicine at Central Hospital and Edo Specialist Hospital, providing emergency care, performing minor surgical procedures, and training junior doctors and medical students. 
+    
+    Earlier, he served as Head of Clinical Services and Donor Care Manager at the National Blood Transfusion Service, South-South Zonal Centre, where he helped the centre earn recognition as the best blood transfusion service in Nigeria in 2008 and 2009.
+    
+    Dr. Ozemoka holds an MBBS and a Master in Public Health from the University of Benin and is a Fellow of the West African College of Physicians. 
+    
+    He has additional training in geriatric medicine, obstetric life support, neonatal resuscitation, and trauma life support.
+    
+    A committed advocate for safe blood, he received the Blood Safety Advocacy Award from the National Blood Transfusion Commission in 2022, among several other honours for service and leadership. 
+    
+    He is a member of the **NMA, SOFPON, and MDCAN,** and is actively involved in research and free medical outreach.`,
   }
 ];
 
@@ -195,7 +217,7 @@ export function TeamSection() {
               <h3 className="text-xl font-extrabold text-[#3c4342] tracking-tight transition-colors duration-200">
                 {member.name}
               </h3>
-              <p className="text-[0.82rem] font-extrabold text-zinc-700 mb-1">
+              <p className="text-[0.82rem] font-semibold text-zinc-500 mb-1">
                 {member.role}
               </p>
             </div>
