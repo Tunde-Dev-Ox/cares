@@ -84,6 +84,27 @@ export const teamMembersData: TeamMember[] = [
     At **APC CARES**, he leads the strategy and technology that help connect Nigerians to the resources, services, and opportunities they need to thrive.`,
   },
   {
+    id: "fasola-olasile",
+    name: "Fasola Olasile",
+    role: "National Executive Member",
+    image: "/founder6.jpeg",
+    extendedBio: `
+    **Fasola Olasile** brings more than 15 years of grassroots service and a strong background in healthcare to APC Community Access to Resources and Empowerment Services (APC CARES).
+    
+    For about 15 years, he has volunteered among underserved communities, providing health outreach, education, and practical support to people who are often overlooked. He is known for his ability to mobilize people, build trust at community level, and turn good intentions into real results. 
+    
+    This experience makes him a natural fit for the mission of APC CARES: connecting communities to the resources and opportunities that improve lives.
+    
+    Professionally, Fasola is an Assistant Chief Medical Laboratory Technician at Olabisi Onabanjo University Teaching Hospital (OOUTH), Sagamu, where he helps deliver the accurate diagnostic services that doctors and patients depend on. 
+    
+    He holds a National Diploma from Ogun State College of Health Technology, Ilese-Ijebu, and is a certified Medical Laboratory Technician with the Medical Laboratory Science Council of Nigeria (MLSCN).
+    
+    He also serves as General Secretary of the Association of Medical Laboratory Technicians and Assistants of Nigeria (AMELTAN), Ogun State Chapter, where he advances the welfare and professional growth of his colleagues across the state.
+    
+    At APC CARES, Fasola brings together clinical knowledge, organizational leadership, and a deep commitment to the grassroots, helping ensure that no community is left behind.
+    `,
+  },
+  {
     id: "gbolahan-adekoyejo",
     name: "Gbolahan Adekoyejo",
     role: "National Executive Committee Member and Coordinator, Education Wing",
