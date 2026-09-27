@@ -10,54 +10,6 @@ export const metadata = {
     "Learn about APC CARES (Community Access to Resources & Empowerment Services), an officially recognized APC support group bridging party vision with community impact across Nigeria.",
 };
 
-const timelineEvents = [
-  {
-    year: "2023",
-    phase: "Phase 01",
-    title: "Ideation & Mandate Alignment",
-    description:
-      "Formed by committed party stakeholders and community advocates to create a structured channel connecting party vision directly to grassroots realities.",
-    tag: "Foundation",
-    color: "#39a452",
-  },
-  {
-    year: "2023",
-    phase: "Phase 02",
-    title: "Official APC Approval",
-    description:
-      "Formally recognized and approved as an official APC support group after meeting rigorous standards of governance, party loyalty, and accountability.",
-    tag: "Recognition",
-    color: "#de232b",
-  },
-  {
-    year: "2024",
-    phase: "Phase 03",
-    title: "36-State & 774 LGA Structure",
-    description:
-      "Established zonal executive committees and state coordination hubs across all 6 geopolitical zones, covering all 774 Local Government Areas.",
-    tag: "Expansion",
-    color: "#5cc3e6",
-  },
-  {
-    year: "2024",
-    phase: "Phase 04",
-    title: "Launch of Thematic Outreaches",
-    description:
-      "Rolled out flagship grassroots interventions spanning education scholarships, healthcare enrollment, micro-grants, and civic town halls.",
-    tag: "Execution",
-    color: "#1e4544",
-  },
-  {
-    year: "2025+",
-    phase: "Phase 05",
-    title: "Renewed Hope Ward Scaling",
-    description:
-      "Scaling ward-level volunteer champion networks to over 1,000 active grassroots leaders driving continuous, verifiable community impact.",
-    tag: "Future Vision",
-    color: "#de232b",
-  },
-];
-
 const coreValues = [
   {
     title: "Grounded in People",

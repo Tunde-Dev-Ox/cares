@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { HiCheckCircle, HiUserGroup, HiSparkles, HiShieldCheck, HiArrowRight, HiMapPin } from "react-icons/hi2";
+import { HiCheckCircle, HiUserGroup, HiSparkles, HiArrowRight, HiMapPin } from "react-icons/hi2";
 import { ScrollReveal } from "@/app/components/scroll-reveal";
 import { HeroPattern } from "@/app/components/hero-pattern";
 
@@ -16,6 +15,8 @@ const nigerianStates = [
 
 export default function GetInvolvedPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -25,11 +26,33 @@ export default function GetInvolvedPage() {
     ward: "",
     roleInterest: "Ward Volunteer Champion",
     message: "",
+    consent: false,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const website = new FormData(e.currentTarget).get("website");
+      const response = await fetch("/api/volunteers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, website }),
+      });
+
+      if (!response.ok) {
+        const result = (await response.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(result?.error || "The registration could not be submitted.");
+      }
+
+      setSubmitted(true);
+    } catch (submissionError) {
+      setError(submissionError instanceof Error ? submissionError.message : "The registration could not be submitted.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -134,6 +157,14 @@ export default function GetInvolvedPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="absolute h-px w-px overflow-hidden opacity-0"
+                    />
                     <div>
                       <h3 className="text-2xl font-extrabold text-[#1e4544] tracking-tight mb-1">
                         Volunteer Registration Form
@@ -145,11 +176,12 @@ export default function GetInvolvedPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                        <label htmlFor="volunteer-name" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                           Full Name *
                         </label>
                         <input
                           type="text"
+                          id="volunteer-name"
                           required
                           placeholder="e.g. Babatunde Usman"
                           value={formData.fullName}
@@ -159,11 +191,12 @@ export default function GetInvolvedPage() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                        <label htmlFor="volunteer-phone" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                           Phone Number *
                         </label>
                         <input
                           type="tel"
+                          id="volunteer-phone"
                           required
                           placeholder="08012345678"
                           value={formData.phone}
@@ -175,11 +208,12 @@ export default function GetInvolvedPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                        <label htmlFor="volunteer-email" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                           Email Address *
                         </label>
                         <input
                           type="email"
+                          id="volunteer-email"
                           required
                           placeholder="you@example.com"
                           value={formData.email}
@@ -189,10 +223,11 @@ export default function GetInvolvedPage() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                        <label htmlFor="volunteer-state" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                           State of Residence *
                         </label>
                         <select
+                          id="volunteer-state"
                           value={formData.state}
                           onChange={(e) => setFormData({ ...formData, state: e.target.value })}
                           className="w-full rounded-lg border border-[#c9d8d1] px-4 py-3 text-sm focus:border-[#1e4544] focus:outline-none bg-white"
@@ -206,11 +241,12 @@ export default function GetInvolvedPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                        <label htmlFor="volunteer-lga" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                           Local Government Area (LGA) *
                         </label>
                         <input
                           type="text"
+                          id="volunteer-lga"
                           required
                           placeholder="e.g. Ikeja LGA"
                           value={formData.lga}
@@ -220,11 +256,12 @@ export default function GetInvolvedPage() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                        <label htmlFor="volunteer-ward" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                           Ward Name / Number
                         </label>
                         <input
                           type="text"
+                          id="volunteer-ward"
                           placeholder="e.g. Ward 04"
                           value={formData.ward}
                           onChange={(e) => setFormData({ ...formData, ward: e.target.value })}
@@ -234,10 +271,11 @@ export default function GetInvolvedPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                      <label htmlFor="volunteer-role" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                         Preferred Role / Area of Interest
                       </label>
                       <select
+                        id="volunteer-role"
                         value={formData.roleInterest}
                         onChange={(e) => setFormData({ ...formData, roleInterest: e.target.value })}
                         className="w-full rounded-lg border border-[#c9d8d1] px-4 py-3 text-sm focus:border-[#1e4544] focus:outline-none bg-white"
@@ -252,11 +290,12 @@ export default function GetInvolvedPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                      <label htmlFor="volunteer-message" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                         Brief Note / Skills (Optional)
                       </label>
                       <textarea
                         rows={3}
+                        id="volunteer-message"
                         placeholder="Tell us briefly about your background or why you want to join..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -264,11 +303,27 @@ export default function GetInvolvedPage() {
                       />
                     </div>
 
+                    <label className="flex items-start gap-3 text-xs leading-relaxed text-[#60736d]">
+                      <input
+                        type="checkbox"
+                        checked={formData.consent}
+                        onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                        className="mt-0.5 h-4 w-4 shrink-0 accent-[#1e4544]"
+                        required
+                      />
+                      <span>I agree that APC CARES may use these details to process my volunteer registration.</span>
+                    </label>
+
+                    {error && (
+                      <p role="alert" className="text-sm font-bold text-[#de232b]">{error}</p>
+                    )}
+
                     <button
                       type="submit"
+                      disabled={isSubmitting}
                       className="w-full bg-[#1e4544] py-4 rounded-lg text-xs font-extrabold uppercase tracking-wider text-white hover:bg-[#123333] transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
                     >
-                      Submit Registration <HiArrowRight size={16} />
+                      {isSubmitting ? "Submitting..." : "Submit Registration"} {!isSubmitting && <HiArrowRight size={16} />}
                     </button>
                   </form>
                 )}

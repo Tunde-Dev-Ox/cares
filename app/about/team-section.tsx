@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import ReactMarkdown from "react-markdown";
+import remarkBreaks from "remark-breaks";
 import { HiCheckCircle, HiUserGroup, HiEnvelope, HiMapPin, HiArrowRight } from "react-icons/hi2";
 import { HiX } from "react-icons/hi";
 import { ScrollReveal } from "@/app/components/scroll-reveal";
@@ -20,57 +22,76 @@ export const teamMembersData: TeamMember[] = [
     name: "Dr. Bukunola Odusanwo",
     role: "National Coordinator",
     image: "/bukunola.jpeg",
-    extendedBio:
-      "Dr. Aliyu O. Bello is a distinguished administrator and policy strategist with nearly two decades of public leadership experience. Having served in key advisory capacities across federal and state governance structures, he leads APC CARES with a clear mandate to connect party vision directly to grassroots impact. He oversees national executive operations, party alignment, and compliance across all 36 state chapters.",
+    extendedBio: `
+    **Dr. Bukunola Odusanwo**, known widely as *Dr. Nola*, is the National Coordinator of APC CARES, dedicated to connecting Nigerian communities with resources, opportunities, and empowerment services. She brings to the role more than four decades of management experience, over thirty years of it in senior leadership, across the United States, the Middle East, and Africa, along with a lifelong conviction that institutions exist to serve the people who depend on them.
+
+    Dr. Odusanwo began her management career in 1984 as a Management Trainee at Bankers Trust in New York and went on to lead programs across pharmaceutical, biotechnology, contract research, construction, and public-sector organizations. Her public-sector work is extensive. She established the Enterprise Project Management Office for the U.S. Department of Health and Human Services and led the creation of national program management offices for the Kingdom of Saudi Arabia's National Border Initiative, the State of Qatar, and the State of Maryland, building the governance, policy, and training structures those governments still rely on today. 
+      
+    As a turnaround executive, she has taken charge of high-visibility programs in crisis and closed them out with hundreds of millions of dollars in recovered savings.In healthcare and life sciences, she has directed global clinical operations for organizations including Parexel International and BIBI Clinical, leading teams of seventy or more across programs in oncology, rare disease, cell and gene therapy, neurology, diabetes, and infectious disease, including COVID-19, Ebola, MPOX, and HIV. Over a decade at Pristine Clinical, she delivered millions of dollars in savings for several drug development sponsors.
+      
+    Her commitment to accountability has always extended to ordinary citizens. During an early stint in Nigeria, she provided executive project management training to major organizations, state governments, and banking institutions. As a facility management services auditor, she has examined the management of residential estates in Lagos and recovered millions of naira on behalf of residents, work she continues today. Since relocating to Lagos, she has also contributed to renovation projects and provided project cost controls for construction projects. She hosts Dr. Nola, a podcast that examines trending Nigerian and global affairs from multiple perspectives, reflecting her belief in informed, open public dialogue.
+      
+    As National Coordinator, Dr. Odusanwo brings this same blend of governance discipline, fiscal stewardship, and community advocacy to APC CARES, with a focus on building a transparent, well-run organization that delivers real access and empowerment to Nigerians at the grassroots.
+      
+    ## Education and Credentials
+      
+    Dr. Odusanwo holds a Doctorate in Healthcare Administration from Virginia University of Lynchburg; a Master of Science in Project Management and a Master of Science in Information Systems Management, both from Keller Graduate School of Management; a nursing diploma from Ivy Tech Community College; and a Bachelor of Arts in French, with a minor in Russian, from the University of Ibadan. She is a certified Project Management Professional (PMP), a Six Sigma Green Belt, and a Licensed Nurse in th U.S.
+      
+    ## Professional Memberships
+      
+    American College of Healthcare Executives, Project Management Institute, Society of Clinical Research Associates, and Society for Clinical Data Management.
+      
+    ## Languages
+      
+    English, French, Spanish, and Russian.`,
   },
   {
     id: "odebode-joseph",
     name: "Dr. Odebode Joseph",
     role: "Financial Secretary",
     image: "/joseph.jpeg",
-    extendedBio:
-      `Dr. Odebode Joseph Olusegun is a Nigerian medical doctor, healthcare entrepreneur, and advocate for innovation in healthcare delivery. He serves as Financial Secretary of APC CARES, bringing to the role the discipline, integrity, and organisational leadership he has built across his medical and business career. Dr. Odebode graduated in Medicine from Obafemi Awolowo University (OAU), Ile-Ife, and holds a Master of Advanced Studies (MAS) in Human Nutrition and Health from ETH Zurich, Switzerland. He received specialised training in Laser Medicine in Switzerland, is a certified Laser Safety Officer through UVEX Germany, and is a member of the Swiss Laser Medicine Association. He has further strengthened his leadership and technology expertise with certifications in Leadership in Healthcare from the University of Washington and in AI and Agentic Systems in Healthcare from Johns Hopkins University. He is the Founder and Chief Executive Officer of Healingrays Healthcare Services Ltd, an organisation providing innovative, evidence-based medical services while promoting education and research. Through Healingrays, he is pioneering the development of laser medicine in Nigeria by establishing specialist clinical services, running professional training programmes, and advocating for regulatory frameworks that ensure safe and effective practice.As an entrepreneur who has built and managed a healthcare enterprise, Dr. Odebode understands the importance of sound financial stewardship, transparency, and accountability. He is committed to ensuring that APC CARES resources are managed responsibly and directed toward programmes that deliver real impact in the lives of the communities it serves. His broader vision is to position Nigeria and West Africa as centres of excellence in healthcare and to expand access to quality services for all, a vision that aligns closely with the APC CARES mission of community access and empowerment.`,
+    extendedBio: `
+    **Dr. Odebode Joseph Olusegun** is a Nigerian medical doctor, healthcare entrepreneur, and advocate for innovation in healthcare delivery. He serves as Financial Secretary of APC CARES, bringing to the role the discipline, integrity, and organisational leadership he has built across his medical and business career. 
+    
+    Dr. Odebode graduated in Medicine from Obafemi Awolowo University (OAU), Ile-Ife, and holds a Master of Advanced Studies (MAS) in Human Nutrition and Health from ETH Zurich, Switzerland. He received specialised training in Laser Medicine in Switzerland, is a certified Laser Safety Officer through UVEX Germany, and is a member of the Swiss Laser Medicine Association. He has further strengthened his leadership and technology expertise with certifications in Leadership in Healthcare from the University of Washington and in AI and Agentic Systems in Healthcare from Johns Hopkins University. 
+    
+    He is the Founder and Chief Executive Officer of Healingrays Healthcare Services Ltd, an organisation providing innovative, evidence-based medical services while promoting education and research. Through Healingrays, he is pioneering the development of laser medicine in Nigeria by establishing specialist clinical services, running professional training programmes, and advocating for regulatory frameworks that ensure safe and effective practice.
+    
+    As an entrepreneur who has built and managed a healthcare enterprise, Dr. Odebode understands the importance of sound financial stewardship, transparency, and accountability. He is committed to ensuring that APC CARES resources are managed responsibly and directed toward programmes that deliver real impact in the lives of the communities it serves. His broader vision is to position Nigeria and West Africa as centres of excellence in healthcare and to expand access to quality services for all, a vision that aligns closely with the APC CARES mission of community access and empowerment.`,
   },
   {
     id: "bamidele-paul",
     name: "Dr. Bamidele Paul",
     role: "National Secretary",
     image: "/founder1.jpeg",
-    extendedBio:
-      `Dr. Bamidele Paul Atiba is a Senior Lecturer, Physician, Public Health Specialist and governance advocate.
-With a background spanning clinical medicine, public health leadership, programme planning, quality improvement and monitoring and evaluation, his work has focused on strengthening systems and translating policy into real impact for people.
-
-He serves on the boards of charity organisations within and outside Nigeria dedicated to supporting people and improving community well-being.
-
-A committed progressive and loyal member of the All Progressives Congress family, Dr. Atiba is passionate about good governance, accountable leadership, and building a more inclusive, people-centred democracy in line with the ideals of the APC.`,
+    extendedBio: `
+    **Dr. Bamidele Paul Atiba** is a Senior Lecturer, Physician, Public Health Specialist and governance advocate. With a background spanning clinical medicine, public health leadership, programme planning, quality improvement and monitoring and evaluation, his work has focused on strengthening systems and translating policy into real impact for people.
+    
+    He serves on the boards of charity organisations within and outside Nigeria dedicated to supporting people and improving community well-being.
+    
+    A committed progressive and loyal member of the All Progressives Congress family, Dr. Atiba is passionate about good governance, accountable leadership, and building a more inclusive, people-centred democracy in line with the ideals of the APC.`,
   },
   {
     id: "kabiesi-ademola",
     name: "Kábíèsí Adémólá",
     role: "Director of Strategy, Innovation, and Technology",
     image: "/kabiesi.jpeg",
-    extendedBio:
-      `Kábíèsí Adémólá (Ademola Taofik) is a technology founder, AI innovator, and communications strategist with more than 18 years of experience using technology and media to widen access and empower communities.
-
-As Founder and Chief Technology Officer of Lodum AI Banking, he builds tools that bring financial services to underserved Nigerians through everyday platforms like WhatsApp and Telegram. 
-
-His other ventures, including Open School Africa, Holu AI, and HarePay, focus on digital learning, financial inclusion, and opportunity for young people and small businesses. 
-
-Through the Kabiesi Ademola Centre, he mentors youth, creators, and emerging tech professionals.
-
-He has worked closely with government and community institutions, advising the Department of Petroleum Resources on public communications and creating Ulera Ekiti, a public health awareness program that reached all 16 local government areas of Ekiti State. 
-
-He has also served as production consultant to the Office of the Ooni of Ife on cultural heritage initiatives, and lectured in media arts at Ekiti State University.
-
-At APC CARES, he leads the strategy and technology that help connect Nigerians to the resources, services, and opportunities they need to thrive.`,
+    extendedBio: `
+    **Kábíèsí Adémólá (Ademola Taofik)** is a technology founder, AI innovator, and communications strategist with more than 18 years of experience using technology and media to widen access and empower communities. As Founder and Chief Technology Officer of Lodum AI Banking, he builds tools that bring financial services to underserved Nigerians through everyday platforms like WhatsApp and Telegram. His other ventures, including Open School Africa, Holu AI, and HarePay, focus on digital learning, financial inclusion, and opportunity for young people and small businesses. 
+    
+    Through the Kabiesi Ademola Centre, he mentors youth, creators, and emerging tech professionals. He has worked closely with government and community institutions, advising the Department of Petroleum Resources on public communications and creating Ulera Ekiti, a public health awareness program that reached all 16 local government areas of Ekiti State. He has also served as production consultant to the Office of the Ooni of Ife on cultural heritage initiatives, and lectured in media arts at Ekiti State University.
+    
+    At **APC CARES**, he leads the strategy and technology that help connect Nigerians to the resources, services, and opportunities they need to thrive.`,
   },
   {
     id: "gbolahan-adekoyejo",
     name: "Gbolahan Adekoyejo",
     role: "National Executive Committee Member and Coordinator, Education Wing",
     image: "/gbolahan.jpeg",
-    extendedBio:
-      `Gbolahan Magbagbeola is a seasoned administrator, educator and public servant with nearly four decades of experience across government, education and faith-based organisations. He serves as a National Executive Committee member of APC CARES and coordinates its Education Wing. His public service career includes serving as Personal Assistant to the Honourable Minister of State for Education (1994–1996) and as Senior Legislative Assistant at the Nigerian National Assembly (2003–2007). In these roles, he supported policy research, drafted legislation and briefings, managed stakeholder relationships, and served as a liaison between lawmakers and their constituents. Since 2009, he has served as Co-Proprietor and Administrator of Potter's Place Nursery & Primary School in Abeokuta, guiding its strategic direction, staff development and community partnerships. He began his career as an English Language teacher in Ibadan and is the author of Civic Education for Senior Secondary Schools (Books 1–3), published by Melrose Publishers. A graduate of French from the University of Ibadan, Mr. Magbagbeola brings political acumen, policy expertise and a lifelong commitment to education and capacity building to his work with APC CARES.`,
+    extendedBio: `
+    Gbolahan Magbagbeola is a seasoned administrator, educator and public servant with nearly four decades of experience across government, education and faith-based organisations. He serves as a National Executive Committee member of APC CARES and coordinates its Education Wing. His public service career includes serving as Personal Assistant to the Honourable Minister of State for Education (1994–1996) and as Senior Legislative Assistant at the Nigerian National Assembly (2003–2007). 
+    
+    In these roles, he supported policy research, drafted legislation and briefings, managed stakeholder relationships, and served as a liaison between lawmakers and their constituents. Since 2009, he has served as Co-Proprietor and Administrator of Potter's Place Nursery & Primary School in Abeokuta, guiding its strategic direction, staff development and community partnerships. He began his career as an English Language teacher in Ibadan and is the author of Civic Education for Senior Secondary Schools (Books 1–3), published by Melrose Publishers. A graduate of French from the University of Ibadan, Mr. Magbagbeola brings political acumen, policy expertise and a lifelong commitment to education and capacity building to his work with APC CARES.`,
   }
 ];
 
@@ -213,9 +234,44 @@ export function TeamSection() {
                     <h4 className="text-[0.75rem] font-extrabold uppercase tracking-[0.16em] text-[#de232b] mb-2">
                       Executive Biography
                     </h4>
-                    <p className="text-[0.95rem] leading-[1.75] text-[#60736d]">
-                      {selectedMember.extendedBio}
-                    </p>
+                    <div className="text-[0.95rem] leading-[1.75] text-[#60736d]">
+                      <ReactMarkdown
+                        remarkPlugins={[remarkBreaks]}
+                        components={{
+                          h2: ({ children }) => (
+                            <h5 className="mt-6 text-sm font-extrabold uppercase tracking-[0.12em] text-[#1e4544] first:mt-0">
+                              {children}
+                            </h5>
+                          ),
+                          h3: ({ children }) => (
+                            <h5 className="mt-5 text-sm font-extrabold uppercase tracking-[0.12em] text-[#1e4544] first:mt-0">
+                              {children}
+                            </h5>
+                          ),
+                          p: ({ children }) => (
+                            <p className="mb-4 last:mb-0">{children}</p>
+                          ),
+                          strong: ({ children }) => (
+                            <strong className="font-extrabold text-[#1e4544]">{children}</strong>
+                          ),
+                          em: ({ children }) => (
+                            <em className="italic text-[#1e4544]">{children}</em>
+                          ),
+                          ul: ({ children }) => (
+                            <ul className="mb-4 list-disc space-y-2 pl-5 last:mb-0">
+                              {children}
+                            </ul>
+                          ),
+                          ol: ({ children }) => (
+                            <ol className="mb-4 list-decimal space-y-2 pl-5 last:mb-0">
+                              {children}
+                            </ol>
+                          ),
+                        }}
+                      >
+                        {selectedMember.extendedBio.trim().replace(/^\s+/gm, "")}
+                      </ReactMarkdown>
+                    </div>
                   </div>
                 </div>
               </div>

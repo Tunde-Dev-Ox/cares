@@ -1,24 +1,47 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import { HiCheckCircle, HiEnvelope, HiPhone, HiMapPin, HiArrowRight, HiChatBubbleLeftRight } from "react-icons/hi2";
+import { HiCheckCircle, HiEnvelope, HiArrowRight, HiChatBubbleLeftRight } from "react-icons/hi2";
 import { ScrollReveal } from "@/app/components/scroll-reveal";
 import { HeroPattern } from "../components/hero-pattern";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
     subject: "",
     category: "General Inquiry",
     message: "",
+    consent: false,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      const website = new FormData(e.currentTarget).get("website");
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, website }),
+      });
+
+      if (!response.ok) {
+        const result = (await response.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(result?.error || "The message could not be sent.");
+      }
+
+      setSubmitted(true);
+    } catch (submissionError) {
+      setError(submissionError instanceof Error ? submissionError.message : "The message could not be sent.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -121,6 +144,14 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="absolute h-px w-px overflow-hidden opacity-0"
+                    />
                     <div>
                       <h3 className="text-2xl font-extrabold text-[#1e4544] tracking-tight mb-1">
                         Send a Message
@@ -132,11 +163,12 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                        <label htmlFor="contact-name" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                           Your Name *
                         </label>
                         <input
                           type="text"
+                          id="contact-name"
                           required
                           placeholder="Your Full Name"
                           value={form.name}
@@ -146,11 +178,12 @@ export default function ContactPage() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                        <label htmlFor="contact-email" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                           Email Address *
                         </label>
                         <input
                           type="email"
+                          id="contact-email"
                           required
                           placeholder="you@example.com"
                           value={form.email}
@@ -161,11 +194,12 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                      <label htmlFor="contact-category" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                         Inquiry Category
                       </label>
                       <select
                         value={form.category}
+                        id="contact-category"
                         onChange={(e) => setForm({ ...form, category: e.target.value })}
                         className="w-full rounded-lg border border-[#c9d8d1] px-4 py-3 text-sm focus:border-[#1e4544] focus:outline-none bg-white"
                       >
@@ -178,11 +212,12 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                      <label htmlFor="contact-subject" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                         Subject Line
                       </label>
                       <input
                         type="text"
+                        id="contact-subject"
                         placeholder="Brief summary of your inquiry..."
                         value={form.subject}
                         onChange={(e) => setForm({ ...form, subject: e.target.value })}
@@ -191,11 +226,12 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                      <label htmlFor="contact-message" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
                         Your Message *
                       </label>
                       <textarea
                         rows={4}
+                        id="contact-message"
                         required
                         placeholder="Type your message or details here..."
                         value={form.message}
@@ -204,11 +240,27 @@ export default function ContactPage() {
                       />
                     </div>
 
+                    <label className="flex items-start gap-3 text-xs leading-relaxed text-[#60736d]">
+                      <input
+                        type="checkbox"
+                        checked={form.consent}
+                        onChange={(e) => setForm({ ...form, consent: e.target.checked })}
+                        className="mt-0.5 h-4 w-4 shrink-0 accent-[#1e4544]"
+                        required
+                      />
+                      <span>I agree that APC CARES may use these details to respond to my inquiry.</span>
+                    </label>
+
+                    {error && (
+                      <p role="alert" className="text-sm font-bold text-[#de232b]">{error}</p>
+                    )}
+
                     <button
                       type="submit"
+                      disabled={isSubmitting}
                       className="w-full bg-[#1e4544] py-4 rounded-lg text-xs font-extrabold uppercase tracking-wider text-white hover:bg-[#123333] transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
                     >
-                      Send Message <HiArrowRight size={18} />
+                      {isSubmitting ? "Sending..." : "Send Message"} {!isSubmitting && <HiArrowRight size={18} />}
                     </button>
                   </form>
                 )}
