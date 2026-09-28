@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#0e2726] py-14">
+      <section className="relative overflow-hidden bg-[#0e2726] py-24">
         {/* Full-bleed Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -41,32 +41,32 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 mx-auto max-w-[1240px] px-6">
-          <div className="max-w-[700px]">
+        <div className="relative z-10 mx-auto max-w-310 px-6">
+          <div className="max-w-175">
             {/* Red accent rule */}
-            <span className="mb-6 block w-12 h-1 bg-[#de232b] transition-all duration-300 hover:w-16" />
+            {/* <span className="mb-6 block w-12 h-1 bg-[#de232b] transition-all duration-300 hover:w-16" />
             <p className="mb-4 text-[0.75rem] font-extrabold uppercase tracking-[0.2em] text-[#de232b]">
               A people-first support platform
-            </p>
-            <h1 className="text-[clamp(2.8rem,6vw,5.2rem)] font-extrabold leading-[0.95] tracking-[-0.06em] text-white">
-              Rooted in people.<br />Ready for progress.
+            </p> */}
+            <h1 className="text-[clamp(2.5rem,6vw,4rem)] font-extrabold leading-[0.95] tracking-[-0.06em] text-white">
+              Bringing renewed hope to every community.
             </h1>
-            <p className="mt-6 text-[1.1rem] leading-[1.75] text-[#d3e3dc] max-w-[500px]">
+            <p className="mt-6 text-[1.1rem] leading-[1.75] text-[#d3e3dc] max-w-125">
               APC CARES brings grassroots support, citizen engagement, and
               empowerment closer to the communities that make Nigeria strong.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-6 flex flex-wrap gap-4">
               <Link
                 href="/get-involved"
-                className="group inline-flex items-center gap-4 bg-[#1e4544] px-8 py-4 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 hover:shadow-xl shadow-lg shadow-black/30"
+                className="group inline-flex items-center gap-4 bg-[#1e4544] px-8 py-3 text-[0.88rem] font-extrabold tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 hover:shadow-xl shadow-lg shadow-black/30 rounded-[80px]"
               >
-                Get Involved <HiArrowRight size={24} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+                Volunteer <HiArrowRight size={24} className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </Link>
               <Link
-                href="/about"
-                className="inline-flex items-center gap-4 border border-white/70 px-8 py-4 text-[0.88rem] font-extrabold uppercase tracking-wider text-white backdrop-blur-xs transition-all duration-300 hover:bg-white hover:text-[#1e4544] hover:-translate-y-1 hover:shadow-lg"
+                href="/wings"
+                className="inline-flex items-center gap-4 border border-white/70 px-8 py-2 text-[0.88rem] font-extrabold tracking-wider text-white backdrop-blur-xs transition-all duration-300 hover:bg-white hover:text-[#1e4544] hover:-translate-y-1 hover:shadow-lg rounded-[80px]"
               >
-                Learn more
+                Explore our wings <HiArrowRight size={24} className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </Link>
             </div>
           </div>
@@ -78,17 +78,25 @@ export default function Home() {
 
       {/* ── INTRO ───────────────────────────────────────────────────── */}
       <ScrollReveal>
-        <section className="mx-auto max-w-[1240px] px-6 py-20 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <h2 className="text-[clamp(2rem,4vw,3.7rem)] font-extrabold leading-[1] tracking-[-0.06em] text-[#1e4544] max-w-[640px]">
+        <section className="mx-auto max-w-310 px-6 py-20 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+          <h2 className="text-[clamp(2rem,4vw,3.7rem)] font-extrabold leading-none tracking-[-0.06em] text-[#1e4544] max-w-160">
             Making participation practical, local, and possible.
           </h2>
-          <p className="text-[1.05rem] font-medium leading-[1.75] text-[#60736d] max-w-[480px]">
+          <div className="md:max-w-[480px]">
+          <p className="text-[1.05rem] font-medium leading-[1.75] text-[#60736d] max-w-120">
             APC CARES is an officially recognized support group established to translate
             the policies and promises of the All Progressives Congress into visible,
             measurable change at the community level. <br/><br/>We mobilize grassroots energy, foster
             civic engagement, and connect citizens across the federation with meaningful
-            pathways to empowerment, resources, and sustainable growth.
+            pathways to empowerment, resources, and sustainable growth.<br/><br/>We are a people-first platform, working to ensure that every Nigerian has the opportunity to participate in the country's progress and prosperity.
           </p>
+          <br/>
+          <p className="mt-4 md:mt-0">
+            <Link href="/wings" className="inline-flex items-center gap-2 text-[#1e4544] font-bold underline hover:no-underline">
+              View our wings <HiArrowRight size={20} />
+            </Link>
+          </p>
+          </div>
         </section>
       </ScrollReveal>
 
@@ -188,7 +196,7 @@ export default function Home() {
               </p>
               <Link
                 href="/about"
-                className="group mt-8 inline-flex items-center gap-3 text-[0.88rem] font-extrabold uppercase tracking-wider text-[#1e4544] transition-colors duration-200 hover:text-[#de232b]"
+                className="group mt-8 inline-flex items-center gap-3 text-[0.88rem] font-extrabold uppercase tracking-wider text-[#1e4544] transition-colors duration-200"
               >
                 Read our full profile <HiArrowRight className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </Link>
@@ -230,13 +238,13 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/get-involved"
-                className="group inline-flex items-center gap-4 bg-[#1e4544] px-8 py-4 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 hover:shadow-lg"
+                className="group inline-flex items-center gap-4 bg-[#1e4544] px-8 py-2 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 hover:shadow-lg rounded-[80px]"
               >
                 Join today <HiArrowRight className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </Link>
               <Link
                 href="/about"
-                className="inline-flex items-center gap-4 border border-white/40 px-8 py-4 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:border-white hover:bg-white/10 hover:-translate-y-1"
+                className="inline-flex items-center gap-4 border border-white/40 px-8 py-2 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:border-white hover:bg-white/10 hover:-translate-y-1 rounded-[80px]"
               >
                 Learn more
               </Link>

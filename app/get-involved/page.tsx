@@ -4,6 +4,7 @@ import { useState } from "react";
 import { HiCheckCircle, HiUserGroup, HiSparkles, HiArrowRight, HiMapPin } from "react-icons/hi2";
 import { ScrollReveal } from "@/app/components/scroll-reveal";
 import { HeroPattern } from "@/app/components/hero-pattern";
+import { SiHomeassistantcommunitystore } from "react-icons/si";
 
 const nigerianStates = [
   "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
@@ -24,7 +25,7 @@ export default function GetInvolvedPage() {
     state: "Lagos",
     lga: "",
     ward: "",
-    roleInterest: "Ward Volunteer Champion",
+    roleInterest: "Healthcare Volunteer",
     message: "",
     consent: false,
   });
@@ -77,7 +78,7 @@ export default function GetInvolvedPage() {
       <section className="mx-auto max-w-[1240px] px-6 py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           {/* Left Column: Ways to Participate */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-4">
             <ScrollReveal>
               <div>
                 <span className="mb-3 block w-10 h-1 bg-[#de232b]" />
@@ -98,7 +99,7 @@ export default function GetInvolvedPage() {
                 <div>
                   <h3 className="font-extrabold text-[#1e4544] text-lg mb-1">Ward Volunteer Champion</h3>
                   <p className="text-xs text-[#60736d] leading-relaxed">
-                    Lead local community engagement, organize monthly ward town halls, and verify beneficiaries for outreach schemes.
+                    You can volunteer to work in a wing that matches your skills and interests, helping to mobilize resources and support for local communities.
                   </p>
                 </div>
               </div>
@@ -107,12 +108,12 @@ export default function GetInvolvedPage() {
             <ScrollReveal delay={200}>
               <div className="bg-white p-6 rounded-xl border border-[#c9d8d1]/60 flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#eaf1ed] text-[#1e4544]">
-                  <HiMapPin className="text-2xl text-[#de232b]" />
+                  <SiHomeassistantcommunitystore className="text-2xl text-[#de232b]" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-[#1e4544] text-lg mb-1">LGA Steering Committee</h3>
+                  <h3 className="font-extrabold text-[#1e4544] text-lg mb-1">Refer a community</h3>
                   <p className="text-xs text-[#60736d] leading-relaxed">
-                    Coordinate field teams across local government wards, liaise with state secretariats, and oversee project audits.
+                    You can contact us directly to refer a community that needs support and we will connect you with the appropriate wing to facilitate assistance.
                   </p>
                 </div>
               </div>
@@ -124,9 +125,9 @@ export default function GetInvolvedPage() {
                   <HiSparkles className="text-2xl text-[#5cc3e6]" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-[#1e4544] text-lg mb-1">Thematic Ambassador</h3>
+                  <h3 className="font-extrabold text-[#1e4544] text-lg mb-1">Lead as a coordinator</h3>
                   <p className="text-xs text-[#60736d] leading-relaxed">
-                    Volunteer your professional skills in healthcare, education, legal advocacy, agriculture, or tech mentorship.
+                    If you have prior experience in community mobilization, project management, or volunteer coordination, you can lead a team of volunteers in a state or Wing.
                   </p>
                 </div>
               </div>
@@ -272,7 +273,7 @@ export default function GetInvolvedPage() {
 
                     <div>
                       <label htmlFor="volunteer-role" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
-                        Preferred Role / Area of Interest
+                        Preferred Role / Choice of Volunteer Wing *
                       </label>
                       <select
                         id="volunteer-role"
@@ -280,12 +281,16 @@ export default function GetInvolvedPage() {
                         onChange={(e) => setFormData({ ...formData, roleInterest: e.target.value })}
                         className="w-full rounded-lg border border-[#c9d8d1] px-4 py-3 text-sm focus:border-[#1e4544] focus:outline-none bg-white"
                       >
-                        <option value="Ward Volunteer Champion">Ward Volunteer Champion</option>
-                        <option value="LGA Steering Committee">LGA Steering Committee Member</option>
-                        <option value="Youth & Women Ambassador">Youth & Women Ambassador</option>
-                        <option value="Healthcare Volunteer">Healthcare Outreaches Volunteer</option>
-                        <option value="Education & Mentorship">Education & Mentorship Volunteer</option>
-                        <option value="Media & Digital Communications">Media & Digital Communications</option>
+                        <option value="Ward Volunteer Champion">Healthcare Volunteer</option>
+                        <option value="LGA Steering Committee">Education Volunteer</option>
+                        <option value="Youth & Women Ambassador">Economic Empowerment Volunteer</option>
+                        <option value="Healthcare Volunteer">Infrastructure Volunteer</option>
+                        <option value="Education & Mentorship">Security Volunteer</option>
+                        <option value="Media & Digital Communications">Youth empowerment</option>
+                        <option value="Media & Digital Communications">Women empowerment</option>
+                        <option value="Media & Digital Communications">Agriculture & Food Security</option>
+                        <option value="Media & Digital Communications">Civic Engagement Volunteer</option>
+                        <option value="Media & Digital Communications">Partnerships & Diaspora</option>
                       </select>
                     </div>
 

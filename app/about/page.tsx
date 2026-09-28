@@ -33,6 +33,65 @@ const coreValues = [
   },
 ];
 
+const commitments = [
+  {
+    number: "01",
+    title: "Deliver resources",
+    description:
+      "Channel education, healthcare, infrastructure support, and economic tools to underserved communities, in line with the Renewed Hope Agenda.",
+    image: "https://images.pexels.com/photos/34162713/pexels-photo-34162713.jpeg",
+    alt: "Community members gathered together outdoors",
+  },
+  {
+    number: "02",
+    title: "Build capacity",
+    description:
+      "Offer vocational training, entrepreneurship development, financial literacy, and leadership skills so citizens become self-reliant.",
+    image: "https://images.pexels.com/photos/5745373/pexels-photo-5745373.jpeg",
+    alt: "Students learning together in a classroom",
+  },
+  {
+    number: "03",
+    title: "Engage stakeholders",
+    description:
+      "Work with APC allies, partners, philanthropists, and corporate sponsors to secure lasting support for community programmes.",
+    image: "https://images.pexels.com/photos/9301314/pexels-photo-9301314.jpeg",
+    alt: "Colleagues discussing a shared project around a table",
+  },
+  {
+    number: "04",
+    title: "Mobilise communities",
+    description:
+      "Build strong local networks so citizens' needs and voices reach the Party's policy and governance processes.",
+    image: "https://images.pexels.com/photos/9487229/pexels-photo-9487229.jpeg",
+    alt: "People taking part in a community gathering",
+  },
+  {
+    number: "05",
+    title: "Stay transparent",
+    description:
+      "Manage funds and resources to the highest standard and report progress openly.",
+    image: "https://images.pexels.com/photos/5313170/pexels-photo-5313170.jpeg",
+    alt: "Team reviewing information and plans together",
+  },
+  {
+    number: "06",
+    title: "Raise awareness",
+    description:
+      "Promote community-driven development and the role of empowered citizens in Nigeria's future.",
+    image: "https://images.pexels.com/photos/34526414/pexels-photo-34526414.jpeg",
+    alt: "People sharing information through a digital device",
+  },
+  {
+    number: "07",
+    title: "Measure results",
+    description:
+      "Track every programme and adapt to what communities actually need.",
+    image: "https://images.pexels.com/photos/6930431/pexels-photo-6930431.jpeg",
+    alt: "A team reviewing charts and programme results",
+  },
+];
+
 export default function AboutPage() {
   return (
     <main className="overflow-x-hidden bg-[#f7f8f3]">
@@ -57,7 +116,7 @@ export default function AboutPage() {
             <p className="mb-4 text-[0.75rem] font-extrabold uppercase tracking-[0.2em] text-[#de232b]">
               About APC CARES
             </p>
-            <h1 className="text-[clamp(2.5rem,5.5vw,4.8rem)] font-extrabold leading-[0.98] tracking-[-0.05em] text-white">
+            <h1 className="text-[clamp(2.5rem,5.5vw,4.8rem)] font-extrabold leading-[0.98] tracking-tighter text-white">
               Closing the gap between party leadership & everyday realities.
             </h1>
             <div className="mt-8 flex flex-wrap gap-4 pt-2">
@@ -89,7 +148,7 @@ export default function AboutPage() {
                   Our Mission
                 </h2>
                 <p className="text-[1.05rem] leading-[1.75] text-[#c5d7d1]">
-                  To serve as a trusted, accountable channel that translates party vision into practical empowerment — delivering direct access to resources, skills, healthcare, and economic opportunity for Nigerians in cities, towns, and villages across the federation.
+                  To be a trusted support bridge between the All Progressives Congress and communities across Nigeria, so that resources, support, and empowerment reach those who need them most. We equip citizens with the tools, knowledge, and opportunities to improve their lives and take part in the nation&apos;s progress, guided by transparency, inclusiveness, and grassroots empowerment.
                 </p>
               </div>
               <div className="mt-8 pt-6 border-t border-white/10 flex items-center gap-3 text-[0.82rem] font-bold text-[#5cc3e6] uppercase tracking-wider">
@@ -110,7 +169,7 @@ export default function AboutPage() {
                   Our Vision
                 </h2>
                 <p className="text-[1.05rem] leading-[1.75] text-[#60736d]">
-                  To build an interconnected, empowered grassroots network where every citizen — regardless of background — has active representation, meaningful civic pathways, and equal access to national growth opportunities under the Renewed Hope Agenda.
+                  A Nigeria where every community, whatever its location or background, has fair access to the resources it needs to grow and prosper. A Nigeria of empowered citizens who act as agents of change, where the ideals of the All Progressives Congress become real, measurable improvements in quality of life, especially in underserved communities.
                 </p>
               </div>
               <div className="mt-8 pt-6 border-t border-[#c9d8d1]/60 flex items-center gap-3 text-[0.82rem] font-bold text-[#1e4544] uppercase tracking-wider">
@@ -119,6 +178,62 @@ export default function AboutPage() {
             </div>
           </div>
         </ScrollReveal>
+      </section>
+
+      {/* ── WHAT WE DO ──────────────────────────────────────────────── */}
+      <section className="mx-auto max-w-[1240px] px-6 py-16 md:py-24">
+        <ScrollReveal>
+          <div className="mb-10 flex flex-col gap-5 border-b border-[#c9d8d1] pb-8 md:mb-12 md:flex-row  md:justify-between">
+            <div>
+              <p className="mb-3 text-[0.72rem] font-extrabold uppercase tracking-[0.18em] text-[#de232b]">
+                Our work in practice
+              </p>
+              <h2 className="max-w-[650px] text-[clamp(2.2rem,4vw,3.6rem)] font-extrabold leading-[1] text-[#1e4544]">
+                What we do
+              </h2>
+            </div>
+            <p className="max-w-[430px] text-[0.96rem] leading-[1.75] text-[#60736d]">
+              We work with APC allies, corporate sponsors, philanthropists, diaspora networks, and government agencies. Together, we carry the Renewed Hope Agenda from policy to people.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          {commitments.map((commitment, index) => (
+            <ScrollReveal
+              key={commitment.number}
+              delay={(index % 3) * 80}
+              className={index === 0 ? "md:col-span-2" : ""}
+            >
+              <article
+                className={`group h-full border border-[#d6dad8a1] bg-white transition-colors duration-300 ${
+                  index === 0 ? "md:grid md:grid-cols-2" : ""
+                }`}
+              >
+                <div className={`relative aspect-[16/10] overflow-hidden bg-[#eaf1ed] ${index === 0 ? "md:aspect-auto md:min-h-[320px]" : ""}`}>
+                  <Image
+                    src={commitment.image}
+                    alt={commitment.alt}
+                    fill
+                    sizes={index === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 50vw"}
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="flex flex-col p-6 md:p-7">
+                  <p className="mb-5 font-mono text-[1rem] font-bold text-[#de232b]">
+                    {commitment.number}
+                  </p>
+                  <h3 className="mb-3 text-2xl font-extrabold text-[#1e4544]">
+                    {commitment.title}
+                  </h3>
+                  <p className="max-w-130 text-[1rem] leading-[1.75] text-[#60736d]">
+                    {commitment.description}
+                  </p>
+                </div>
+              </article>
+            </ScrollReveal>
+          ))}
+        </div>
       </section>
 
       {/* ── TEAM SECTION (Interactive Slide-Over Drawer) ───────────────── */}
@@ -171,20 +286,20 @@ export default function AboutPage() {
               Be a part of the movement for grassroots empowerment.
             </h2>
             <p className="text-[1.05rem] leading-[1.75] text-[#c5d7d1] mb-8 max-w-[600px] mx-auto">
-              Join thousands of dedicated volunteers, community leaders, and advocates working to bring meaningful opportunity to every ward in Nigeria.
+              We welcome APC organs and allies, corporate sponsors and CSR programmes, philanthropic foundations, diaspora networks, and government agencies.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/get-involved"
-                className="group inline-flex items-center gap-3 bg-[#1e4544] px-8 py-4 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/30"
+                href="/contact"
+                className="group inline-flex items-center gap-3 bg-[#1e4544] px-8 py-3 text-[0.88rem] font-extrabold tracking-wider text-white transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/30 rounded-[80px]"
               >
-                Get Involved Now <HiArrowRight className="transition-transform duration-300 group-hover:translate-x-1.5" />
+                Partner with us <HiArrowRight className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </Link>
               <Link
                 href="/our-mandate"
-                className="inline-flex items-center gap-3 border border-white/60 px-8 py-4 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#1e4544] hover:-translate-y-1"
+                className="inline-flex items-center gap-3 border border-white/60 px-8 py-3 text-[0.88rem] font-extrabold tracking-wider text-white transition-all duration-300 hover:bg-white hover:text-[#1e4544] hover:-translate-y-1 rounded-[80px]"
               >
-                View Our Mandate
+                View our mandate
               </Link>
             </div>
           </ScrollReveal>

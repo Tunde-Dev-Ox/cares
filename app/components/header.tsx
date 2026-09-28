@@ -8,6 +8,7 @@ import { HiArrowRight } from "react-icons/hi2";
 
 const links = [
   { href: "/about", label: "About" },
+  { href: "/wings", label: "Our Wings" },
   { href: "/our-mandate", label: "Our Mandate" },
   { href: "/media-room", label: "Media Room" },
   { href: "/get-involved", label: "Get Involved" },
@@ -18,10 +19,10 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[#c9d8d1]/60 bg-[#f7f8f3]/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-3">
+    <header className="sticky top-0 z-50 w-full bg-[#f7f8f3] bg-opacity-90 backdrop-blur-sm shadow-md">
+      <div className="mx-auto flex max-w-310 items-center justify-between px-6 py-3">
         {/* Logo */}
-        <Link href="/" aria-label="APC CARES home" className="flex items-center gap-2 shrink-0">
+        <Link href="/" aria-label="APC CARES home" className="flex items-center gap-2 shrink-0 w-30">
           <Image
             src="/logo.png"
             alt="APC CARES logo"
@@ -33,24 +34,28 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-4" aria-label="Main navigation">
+        <nav className="hidden md:flex items-center gap-2" aria-label="Main navigation">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-[0.75rem] font-bold tracking-wide text-[#60736d] uppercase transition-colors duration-200 hover:text-[#06230d]"
+              className="group relative inline-block py-2 text-[0.85rem] font-bold tracking-wide text-[#1e4544] transition-colors duration-200 hover:bg-zinc-300 px-2 rounded-full"
             >
               {l.label}
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-[#de232b] transition-transform duration-300 ease-out group-focus-visible:scale-x-100 motion-reduce:transition-none"
+              />
             </Link>
           ))}
         </nav>
 
         {/* Desktop CTA */}
         <Link
-          href="/get-involved"
-          className="hidden md:inline-flex items-center gap-3 bg-[#1e4544] text-white text-[0.78rem] font-extrabold uppercase tracking-wider px-5 py-3 transition-all duration-200 hover:bg-[#123333] hover:-translate-y-0.5"
+          href="/contact"
+          className="hidden md:inline-flex items-center gap-3 bg-[#1e4544] text-white text-[0.85rem] font-extrabold tracking-wider px-5 py-3 transition-all duration-200 hover:bg-[#123333] hover:-translate-y-0.5 rounded-[80px]"
         >
-          Join the movement <span aria-hidden="true"><HiArrowRight size={24} className="text-white"/></span>
+          Partner with us <span aria-hidden="true"><HiArrowRight size={20} className="text-white"/></span>
         </Link>
 
         {/* Mobile hamburger */}
@@ -71,17 +76,21 @@ export function Header() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-[0.9rem] font-bold text-[#1e4544] tracking-wide uppercase"
+              className="group relative w-fit py-1 text-[0.9rem] font-bold text-[#1e4544] tracking-wide transition-colors duration-200 hover:text-[#de232b] focus-visible:text-[#de232b]"
             >
               {l.label}
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-[#de232b] transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
+              />
             </Link>
           ))}
           <Link
-            href="/get-involved"
+            href="/contact"
             onClick={() => setOpen(false)}
-            className="inline-flex items-center justify-center gap-3 bg-[#1e4544] text-white text-[0.82rem] font-extrabold uppercase tracking-wider px-5 py-3 mt-2"
+            className="inline-flex items-center justify-center gap-3 bg-[#1e4544] text-white text-[0.82rem] font-extrabold tracking-wider px-5 py-3 mt-2"
           >
-            Join the movement <span aria-hidden="true">
+            Partner with us <span aria-hidden="true">
               <HiArrowRight />
             </span>
           </Link>
