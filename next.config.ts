@@ -29,6 +29,12 @@ const nextConfig: NextConfig = {
         pathname: "/**",
         // search omitted → allows any query string (w=, q= params)
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
+        // search omitted → allows any query string (w=, q= params)
+      },
     ],
     qualities: [75, 90],
   },

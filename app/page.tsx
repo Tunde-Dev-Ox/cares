@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi2";
 import { StatsBand } from "@/app/components/stats-band";
 import { ScrollReveal } from "@/app/components/scroll-reveal";
+import { TrackLink } from "@/components/track-link";
 
 const pillars = [
   { num: "01", title: "Grassroots Support", body: "Mobilising local energy and building stronger community networks from the ground up." },
@@ -27,7 +27,7 @@ export default function Home() {
         {/* Full-bleed Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero.png"
+            src="https://res.cloudinary.com/nextbuildr/image/upload/hero_vykhcm.webp"
             alt="Community members gathered at a grassroots empowerment event"
             fill
             className="object-cover object-center transition-transform duration-1000 scale-100 hover:scale-105"
@@ -36,7 +36,7 @@ export default function Home() {
             unoptimized
           />
           {/* Gradient Overlay for contrast and readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0d2524]/75 via-[#0d2524]/55 to-[#0d2524]/20" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0d2524]/75 via-[#0d2524]/55 to-[#0d2524]/20" />
           <div className="absolute inset-0 bg-black/20" />
         </div>
 
@@ -56,18 +56,22 @@ export default function Home() {
               empowerment closer to the communities that make Nigeria strong.
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
-              <Link
+              <TrackLink
                 href="/get-involved"
+                eventName="cta_click"
+                eventProperties={{ cta: "home_volunteer", source: "homepage_hero" }}
                 className="group inline-flex items-center gap-4 bg-[#1e4544] px-8 py-3 text-[0.88rem] font-extrabold tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 hover:shadow-xl shadow-lg shadow-black/30 rounded-[80px]"
               >
                 Volunteer <HiArrowRight size={24} className="transition-transform duration-300 group-hover:translate-x-1.5" />
-              </Link>
-              <Link
+              </TrackLink>
+              <TrackLink
                 href="/wings"
+                eventName="cta_click"
+                eventProperties={{ cta: "home_explore_wings", source: "homepage_hero" }}
                 className="inline-flex items-center gap-4 border border-white/70 px-8 py-2 text-[0.88rem] font-extrabold tracking-wider text-white backdrop-blur-xs transition-all duration-300 hover:bg-white hover:text-[#1e4544] hover:-translate-y-1 hover:shadow-lg rounded-[80px]"
               >
                 Explore our wings <HiArrowRight size={24} className="transition-transform duration-300 group-hover:translate-x-1.5" />
-              </Link>
+              </TrackLink>
             </div>
           </div>
         </div>
@@ -92,9 +96,14 @@ export default function Home() {
           </p>
           <br/>
           <p className="mt-4 md:mt-0">
-            <Link href="/wings" className="inline-flex items-center gap-2 text-[#1e4544] font-bold underline hover:no-underline">
+            <TrackLink
+              href="/wings"
+              eventName="cta_click"
+              eventProperties={{ cta: "home_view_wings", source: "homepage_intro" }}
+              className="inline-flex items-center gap-2 text-[#1e4544] font-bold underline hover:no-underline"
+            >
               View our wings <HiArrowRight size={20} />
-            </Link>
+            </TrackLink>
           </p>
           </div>
         </section>
@@ -173,7 +182,7 @@ export default function Home() {
           <div className="mx-auto max-w-[900px] flex flex-col-reverse items-center gap-10 md:flex-row-reverse md:gap-16">
             <div className="shrink-0 overflow-hidden rounded-xl shadow-md group">
               <Image
-                src="https://images.pexels.com/photos/36111372/pexels-photo-36111372.jpeg"
+                src="https://res.cloudinary.com/nextbuildr/image/upload/who-we-are_j10p18.avif"
                 alt="APC CARES — Community Access to Resources & Empowerment Services"
                 width={400}
                 height={400}
@@ -194,12 +203,14 @@ export default function Home() {
                 trusted, accountable channel through which resources, opportunities,
                 and empowerment reach the people who need them most.
               </p>
-              <Link
+              <TrackLink
                 href="/about"
+                eventName="cta_click"
+                eventProperties={{ cta: "home_about_profile", source: "homepage_about" }}
                 className="group mt-8 inline-flex items-center gap-3 text-[0.88rem] font-extrabold uppercase tracking-wider text-[#1e4544] transition-colors duration-200"
               >
                 Read our full profile <HiArrowRight className="transition-transform duration-300 group-hover:translate-x-1.5" />
-              </Link>
+              </TrackLink>
             </div>
           </div>
         </ScrollReveal>
@@ -209,7 +220,7 @@ export default function Home() {
       <section className="relative overflow-hidden min-h-[400px] flex items-center px-6 py-16 group">
         {/* Background photograph */}
         <Image
-          src="https://images.pexels.com/photos/36467878/pexels-photo-36467878.jpeg"
+          src="https://res.cloudinary.com/nextbuildr/image/upload/children_ogvn7s.avif"
           alt="People united together in community"
           fill
           className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -236,18 +247,22 @@ export default function Home() {
               or concerned citizen — there is a place for you in CARES.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link
+              <TrackLink
                 href="/get-involved"
+                eventName="cta_click"
+                eventProperties={{ cta: "home_get_involved", source: "homepage_cta" }}
                 className="group inline-flex items-center gap-4 bg-[#1e4544] px-8 py-2 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 hover:shadow-lg rounded-[80px]"
               >
                 Join today <HiArrowRight className="transition-transform duration-300 group-hover:translate-x-1.5" />
-              </Link>
-              <Link
+              </TrackLink>
+              <TrackLink
                 href="/about"
+                eventName="cta_click"
+                eventProperties={{ cta: "home_learn_more", source: "homepage_cta" }}
                 className="inline-flex items-center gap-4 border border-white/40 px-8 py-2 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:border-white hover:bg-white/10 hover:-translate-y-1 rounded-[80px]"
               >
                 Learn more
-              </Link>
+              </TrackLink>
             </div>
           </ScrollReveal>
         </div>

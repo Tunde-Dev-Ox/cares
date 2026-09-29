@@ -39,7 +39,7 @@ const commitments = [
     title: "Deliver resources",
     description:
       "Channel education, healthcare, infrastructure support, and economic tools to underserved communities, in line with the Renewed Hope Agenda.",
-    image: "https://images.pexels.com/photos/34162713/pexels-photo-34162713.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/deliver_l0ja4v.avif",
     alt: "Community members gathered together outdoors",
   },
   {
@@ -47,7 +47,7 @@ const commitments = [
     title: "Build capacity",
     description:
       "Offer vocational training, entrepreneurship development, financial literacy, and leadership skills so citizens become self-reliant.",
-    image: "https://images.pexels.com/photos/5745373/pexels-photo-5745373.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/capacity_fn6ro7.avif",
     alt: "Students learning together in a classroom",
   },
   {
@@ -55,7 +55,7 @@ const commitments = [
     title: "Engage stakeholders",
     description:
       "Work with APC allies, partners, philanthropists, and corporate sponsors to secure lasting support for community programmes.",
-    image: "https://images.pexels.com/photos/9301314/pexels-photo-9301314.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/stakeholders_wi8qfz.avif",
     alt: "Colleagues discussing a shared project around a table",
   },
   {
@@ -63,7 +63,7 @@ const commitments = [
     title: "Mobilise communities",
     description:
       "Build strong local networks so citizens' needs and voices reach the Party's policy and governance processes.",
-    image: "https://images.pexels.com/photos/9487229/pexels-photo-9487229.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/mobilize_ayjeid.avif",
     alt: "People taking part in a community gathering",
   },
   {
@@ -71,7 +71,7 @@ const commitments = [
     title: "Stay transparent",
     description:
       "Manage funds and resources to the highest standard and report progress openly.",
-    image: "https://images.pexels.com/photos/5313170/pexels-photo-5313170.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/transparent_awk4lg.avif",
     alt: "Team reviewing information and plans together",
   },
   {
@@ -79,7 +79,7 @@ const commitments = [
     title: "Raise awareness",
     description:
       "Promote community-driven development and the role of empowered citizens in Nigeria's future.",
-    image: "https://images.pexels.com/photos/34526414/pexels-photo-34526414.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/awareness_yjcbqx.avif",
     alt: "People sharing information through a digital device",
   },
   {
@@ -87,7 +87,7 @@ const commitments = [
     title: "Measure results",
     description:
       "Track every programme and adapt to what communities actually need.",
-    image: "https://images.pexels.com/photos/6930431/pexels-photo-6930431.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/results_c9hjgf.avif",
     alt: "A team reviewing charts and programme results",
   },
 ];
@@ -100,7 +100,7 @@ export default function AboutPage() {
         {/* Background photo overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.pexels.com/photos/36658238/pexels-photo-36658238.jpeg"
+            src="https://res.cloudinary.com/nextbuildr/image/upload/about_ghgyn0.avif"
             alt="APC CARES Community Members"
             fill
             className="object-cover object-center opacity-90"
@@ -271,7 +271,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-[#0e2726] py-20 px-6 text-white text-center">
         <div className="absolute inset-0 opacity-40">
           <Image
-            src="https://images.pexels.com/photos/36972167/pexels-photo-36972167.jpeg"
+            src="https://res.cloudinary.com/nextbuildr/image/upload/about-cta_wg5xjc.avif"
             alt="APC CARES Community"
             fill
             className="object-cover object-center opacity-80"

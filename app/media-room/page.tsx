@@ -67,10 +67,10 @@ export default function MediaRoomPage() {
               </p>
 
               <div className="flex flex-wrap gap-4 pt-2 border-t border-white/10">
-                <span className="inline-flex items-center gap-2 text-xs font-bold text-white bg-white/10 px-4 py-2 rounded-lg">
+                <span className="inline-flex items-center gap-2 text-xs font-bold text-white bg-white/10 px-4 py-2 rounded-[80px]">
                   <HiCheckCircle className="text-[#39a452] text-lg" /> Official Recognition Granted
                 </span>
-                <span className="inline-flex items-center gap-2 text-xs font-bold text-white bg-white/10 px-4 py-2 rounded-lg">
+                <span className="inline-flex items-center gap-2 text-xs font-bold text-white bg-white/10 px-4 py-2 rounded-[80px]">
                   <HiCheckCircle className="text-[#5cc3e6] text-lg" /> 774 LGA Authorization
                 </span>
               </div>
@@ -112,7 +112,7 @@ export default function MediaRoomPage() {
                   </p>
                 </div>
                 <div className="shrink-0">
-                  <span className="inline-flex items-center gap-2 text-xs font-extrabold text-[#1e4544] bg-[#eaf1ed] px-4 py-2 rounded-lg">
+                  <span className="inline-flex items-center gap-2 text-xs font-extrabold text-[#1e4544] bg-[#eaf1ed] px-4 py-2 rounded-[80px]">
                     Full Release <HiArrowRight size={16} />
                   </span>
                 </div>
@@ -135,7 +135,7 @@ export default function MediaRoomPage() {
             </p>
             <a
               href="mailto:info@apccares.org"
-              className="inline-flex items-center gap-2 bg-[#1e4544] px-6 py-3 rounded-lg text-sm font-extrabold text-white hover:bg-[#123333] transition-colors"
+              className="inline-flex items-center gap-2 bg-[#1e4544] px-6 py-3 text-sm font-extrabold text-white hover:bg-[#123333] transition-colors cursor-pointer rounded-[80px]"
             >
               Contact Press Team (info@apccares.org)
             </a>

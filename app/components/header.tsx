@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { HiArrowRight } from "react-icons/hi2";
+import { captureEvent } from "@/lib/posthog";
 
 const links = [
   { href: "/about", label: "About" },
@@ -18,11 +18,40 @@ const links = [
 export function Header() {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    const trackedLinks = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>("[data-analytics-event]")
+    );
+
+    const handlers = trackedLinks.map((link) => {
+      const handleClick = () => {
+        const payload = link.dataset.analyticsPayload
+          ? JSON.parse(link.dataset.analyticsPayload)
+          : {};
+
+        captureEvent(link.dataset.analyticsEvent || "cta_click", payload);
+
+        if (link.dataset.analyticsCloseMenu === "true") {
+          setOpen(false);
+        }
+      };
+
+      link.addEventListener("click", handleClick);
+
+      return [link, handleClick] as const;
+    });
+
+    return () => {
+      handlers.forEach(([link, handleClick]) => {
+        link.removeEventListener("click", handleClick);
+      });
+    };
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 w-full bg-[#f7f8f3] bg-opacity-90 backdrop-blur-sm shadow-md">
       <div className="mx-auto flex max-w-310 items-center justify-between px-6 py-3">
-        {/* Logo */}
-        <Link href="/" aria-label="APC CARES home" className="flex items-center gap-2 shrink-0 w-30">
+        <a href="/" aria-label="APC CARES home" className="flex items-center gap-2 shrink-0 w-30">
           <Image
             src="/logo.png"
             alt="APC CARES logo"
@@ -31,14 +60,15 @@ export function Header() {
             className="object-contain"
             loading="eager"
           />
-        </Link>
+        </a>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-2" aria-label="Main navigation">
           {links.map((l) => (
-            <Link
+            <a
               key={l.href}
               href={l.href}
+              data-analytics-event="nav_click"
+              data-analytics-payload={JSON.stringify({ nav_label: l.label, href: l.href, nav_location: "header" })}
               className="group relative inline-block py-2 text-[0.85rem] font-bold tracking-wide text-[#1e4544] transition-colors duration-200 hover:bg-zinc-300 px-2 rounded-full"
             >
               {l.label}
@@ -46,19 +76,19 @@ export function Header() {
                 aria-hidden="true"
                 className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-[#de232b] transition-transform duration-300 ease-out group-focus-visible:scale-x-100 motion-reduce:transition-none"
               />
-            </Link>
+            </a>
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <Link
+        <a
           href="/contact"
+          data-analytics-event="cta_click"
+          data-analytics-payload={JSON.stringify({ cta: "header_contact", href: "/contact", source: "header" })}
           className="hidden md:inline-flex items-center gap-3 bg-[#1e4544] text-white text-[0.85rem] font-extrabold tracking-wider px-5 py-3 transition-all duration-200 hover:bg-[#123333] hover:-translate-y-0.5 rounded-[80px]"
         >
           Partner with us <span aria-hidden="true"><HiArrowRight size={20} className="text-white"/></span>
-        </Link>
+        </a>
 
-        {/* Mobile hamburger */}
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
@@ -68,14 +98,15 @@ export function Header() {
         </button>
       </div>
 
-      {/* Mobile drawer */}
       {open && (
         <div className="md:hidden border-t border-[#c9d8d1]/60 bg-[#f7f8f3] px-6 py-5 flex flex-col gap-5 -z-50">
           {links.map((l) => (
-            <Link
+            <a
               key={l.href}
               href={l.href}
-              onClick={() => setOpen(false)}
+              data-analytics-event="nav_click"
+              data-analytics-payload={JSON.stringify({ nav_label: l.label, href: l.href, nav_location: "header_mobile" })}
+              data-analytics-close-menu="true"
               className="group relative w-fit py-1 text-[0.9rem] font-bold text-[#1e4544] tracking-wide transition-colors duration-200 hover:text-[#de232b] focus-visible:text-[#de232b]"
             >
               {l.label}
@@ -83,17 +114,19 @@ export function Header() {
                 aria-hidden="true"
                 className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-[#de232b] transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
               />
-            </Link>
+            </a>
           ))}
-          <Link
+          <a
             href="/contact"
-            onClick={() => setOpen(false)}
+            data-analytics-event="cta_click"
+            data-analytics-payload={JSON.stringify({ cta: "header_contact_mobile", href: "/contact", source: "header_mobile" })}
+            data-analytics-close-menu="true"
             className="inline-flex items-center justify-center gap-3 bg-[#1e4544] text-white text-[0.82rem] font-extrabold tracking-wider px-5 py-3 mt-2"
           >
             Partner with us <span aria-hidden="true">
               <HiArrowRight />
             </span>
-          </Link>
+          </a>
         </div>
       )}
     </header>

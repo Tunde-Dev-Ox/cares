@@ -96,7 +96,7 @@ export default function MandatePage() {
       <section className="relative overflow-hidden bg-[#0e2726] py-14 md:py-20 text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.pexels.com/photos/8124419/pexels-photo-8124419.jpeg"
+            src="https://res.cloudinary.com/nextbuildr/image/upload/mandate_mwcxvl.avif"
             alt="APC CARES Mandate Background"
             fill
             className="object-cover opacity-70"
@@ -216,10 +216,10 @@ export default function MandatePage() {
               </p>
             </div>
             <div className="shrink-0 flex flex-col gap-3">
-              <div className="flex items-center gap-3 bg-[#eaf1ed] px-5 py-3 rounded-lg text-[0.85rem] font-extrabold text-[#1e4544]">
+              <div className="flex items-center gap-3 bg-[#eaf1ed] px-5 py-3 rounded-[80px] text-[0.85rem] font-extrabold text-[#1e4544]">
                 <HiShieldCheck className="text-xl text-[#39a452]" /> Verified Beneficiary Database
               </div>
-              <div className="flex items-center gap-3 bg-[#eaf1ed] px-5 py-3 rounded-lg text-[0.85rem] font-extrabold text-[#1e4544]">
+              <div className="flex items-center gap-3 bg-[#eaf1ed] px-5 py-3 rounded-[80px] text-[0.85rem] font-extrabold text-[#1e4544]">
                 <HiDocumentCheck className="text-xl text-[#5cc3e6]" /> Quarterly Public Audit Reports
               </div>
             </div>
@@ -228,7 +228,17 @@ export default function MandatePage() {
       </section>
 
       {/* ── CTA BANNER ────────────────────────────────────────────────── */}
-      <section className="bg-[#0e2726] py-20 px-6 text-white text-center">
+      <section className="bg-[#0e2726] py-20 px-6 text-white text-center relative">
+        <div className="absolute inset-0 opacity-40">
+                  <Image
+                    src="https://res.cloudinary.com/nextbuildr/image/upload/partner_vlaigl.jpg"
+                    alt="APC CARES Community"
+                    fill
+                    className="object-cover object-center opacity-80"
+                    unoptimized
+                    priority
+                  />
+                </div>
         <div className="mx-auto max-w-[760px]">
           <ScrollReveal>
             <span className="mb-4 block w-10 h-1 bg-[#de232b] mx-auto" />
@@ -240,9 +250,9 @@ export default function MandatePage() {
             </p>
             <Link
               href="/get-involved"
-              className="inline-flex items-center gap-3 bg-[#1e4544] px-8 py-4 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 shadow-lg"
+              className="inline-flex items-center gap-3 bg-[#1e4544] px-8 py-4 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 shadow-lg rounded-[80px]"
             >
-              Get Involved Today <HiArrowRight />
+              Get Involved Today <HiArrowRight size={20} />
             </Link>
           </ScrollReveal>
         </div>

@@ -21,7 +21,7 @@ export const teamMembersData: TeamMember[] = [
     id: "bukunola-odusanwo",
     name: "Dr. Bukunola Odusanwo",
     role: "National Coordinator",
-    image: "/bukunola.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/bukunola_jurhle.jpg",
     extendedBio: `
     **Dr. Bukunola Odusanwo**, known widely as *Dr. Nola*, is the National Coordinator of APC CARES, dedicated to connecting Nigerian communities with resources, opportunities, and empowerment services. She brings to the role more than four decades of management experience, over thirty years of it in senior leadership, across the United States, the Middle East, and Africa, along with a lifelong conviction that institutions exist to serve the people who depend on them.
 
@@ -49,7 +49,7 @@ export const teamMembersData: TeamMember[] = [
     id: "odebode-joseph",
     name: "Dr. Odebode Joseph",
     role: "Financial Secretary",
-    image: "/joseph.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/joseph_zvgtzf.jpg",
     extendedBio: `
     **Dr. Odebode Joseph Olusegun** is a Nigerian medical doctor, healthcare entrepreneur, and advocate for innovation in healthcare delivery. He serves as Financial Secretary of APC CARES, bringing to the role the discipline, integrity, and organisational leadership he has built across his medical and business career. 
     
@@ -63,7 +63,7 @@ export const teamMembersData: TeamMember[] = [
     id: "bamidele-paul",
     name: "Dr. Bamidele Paul",
     role: "National Secretary",
-    image: "/founder1.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/founder1_yy5skp.jpg",
     extendedBio: `
     **Dr. Bamidele Paul Atiba** is a Senior Lecturer, Physician, Public Health Specialist and governance advocate. With a background spanning clinical medicine, public health leadership, programme planning, quality improvement and monitoring and evaluation, his work has focused on strengthening systems and translating policy into real impact for people.
     
@@ -75,7 +75,7 @@ export const teamMembersData: TeamMember[] = [
     id: "kabiesi-ademola",
     name: "Kábíèsí Adémólá",
     role: "Director of Strategy, Innovation, and Technology",
-    image: "/kabiesi.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/kabiesi_gsls3b.jpg",
     extendedBio: `
     **Kábíèsí Adémólá (Ademola Taofik)** is a technology founder, AI innovator, and communications strategist with more than 18 years of experience using technology and media to widen access and empower communities. As Founder and Chief Technology Officer of Lodum AI Banking, he builds tools that bring financial services to underserved Nigerians through everyday platforms like WhatsApp and Telegram. His other ventures, including Open School Africa, Holu AI, and HarePay, focus on digital learning, financial inclusion, and opportunity for young people and small businesses. 
     
@@ -87,7 +87,7 @@ export const teamMembersData: TeamMember[] = [
     id: "fasola-olasile",
     name: "Fasola Olasile",
     role: "National Executive Member",
-    image: "/founder6.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/founder6_quhthp.jpg",
     extendedBio: `
     **Fasola Olasile** brings more than 15 years of grassroots service and a strong background in healthcare to APC Community Access to Resources and Empowerment Services (APC CARES).
     
@@ -108,7 +108,7 @@ export const teamMembersData: TeamMember[] = [
     id: "gbolahan-adekoyejo",
     name: "Gbolahan Adekoyejo",
     role: "National Executive Committee Member and Coordinator, Education Wing",
-    image: "/gbolahan.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/gbolahan_glfrqp.jpg",
     extendedBio: `
     Gbolahan Magbagbeola is a seasoned administrator, educator and public servant with nearly four decades of experience across government, education and faith-based organisations. He serves as a National Executive Committee member of APC CARES and coordinates its Education Wing. His public service career includes serving as Personal Assistant to the Honourable Minister of State for Education (1994–1996) and as Senior Legislative Assistant at the Nigerian National Assembly (2003–2007). 
     
@@ -118,7 +118,7 @@ export const teamMembersData: TeamMember[] = [
     id: "suleman-ozemoka",
     name: "Dr. Suleman Shaibu Ozemoka, MBBS, MPH, FWACP",
     role: "Consultant Family Physician",
-    image: "/suleiman.jpeg",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/suleiman_tgz3e6.jpg",
     extendedBio: `
     **Dr. Suleman Shaibu Ozemoka** is a Consultant Family Physician with more than 20 years of experience across clinical medicine and public health. 
     

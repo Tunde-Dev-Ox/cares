@@ -4,9 +4,12 @@ import { HiArrowRight } from "react-icons/hi2";
 import { HeroPattern } from "@/app/components/hero-pattern";
 
 export const metadata: Metadata = {
-  title: "Our Wings",
+  title: "Our Wings | APC CARES | Community Programmes & Grassroots Support",
   description:
-    "Explore the ten specialised APC CARES Wings and the programmes they deliver with communities and partners.",
+    "Explore the ten specialised APC CARES Wings and the programmes powering grassroots support, community engagement, and local development across Nigeria.",
+  alternates: {
+    canonical: "/wings",
+  },
 };
 
 const wings = [

@@ -1,5 +1,10 @@
 export const metadata = {
-  title: "Our Work",
+  title: "Our Work | APC CARES | Grassroots Mobilisation & Community Impact",
+  description:
+    "Learn how APC CARES turns grassroots energy, civic engagement, and local partnerships into practical community impact across Nigeria.",
+  alternates: {
+    canonical: "/our-work",
+  },
 };
 
 const focusAreas = [
