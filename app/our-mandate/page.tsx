@@ -235,7 +235,6 @@ export default function MandatePage() {
                     alt="APC CARES Community"
                     fill
                     className="object-cover object-center opacity-80"
-                    unoptimized
                     priority
                   />
                 </div>

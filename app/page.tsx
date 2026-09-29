@@ -33,7 +33,6 @@ export default function Home() {
             className="object-cover object-center transition-transform duration-1000 scale-100 hover:scale-105"
             sizes="100vw"
             loading="eager"
-            unoptimized
           />
           {/* Gradient Overlay for contrast and readability */}
           <div className="absolute inset-0 bg-linear-to-r from-[#0d2524]/75 via-[#0d2524]/55 to-[#0d2524]/20" />
@@ -226,7 +225,6 @@ export default function Home() {
           className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
           sizes="100vw"
           loading="lazy"
-          unoptimized
         />
         {/* Dark overlay — APC green tint */}
         <div className="absolute inset-0 bg-[#123333]/60 transition-opacity duration-500 group-hover:bg-[#123333]/55" />

@@ -105,7 +105,6 @@ export default function AboutPage() {
             fill
             className="object-cover object-center opacity-90"
             priority
-            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0e2726] via-[#0e2726]/60 to-[#0e2726]/30" />
         </div>
@@ -215,7 +214,6 @@ export default function AboutPage() {
                     src={commitment.image}
                     alt={commitment.alt}
                     fill
-                    optimization="true"
                     sizes={index === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 50vw"}
                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                   />
@@ -276,7 +274,6 @@ export default function AboutPage() {
             alt="APC CARES Community"
             fill
             className="object-cover object-center opacity-80"
-            unoptimized
             priority
           />
         </div>
