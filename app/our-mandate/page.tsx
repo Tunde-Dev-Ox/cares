@@ -96,7 +96,7 @@ export default function MandatePage() {
       <section className="relative overflow-hidden bg-[#0e2726] py-14 md:py-20 text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://res.cloudinary.com/nextbuildr/image/upload/mandate_mwcxvl.avif"
+            src="https://res.cloudinary.com/nextbuildr/image/upload/f_webp/q_auto:good/dpr_auto/mandate_mwcxvl.avif"
             alt="APC CARES Mandate Background"
             fill
             className="object-cover opacity-70"
@@ -231,7 +231,7 @@ export default function MandatePage() {
       <section className="bg-[#0e2726] py-20 px-6 text-white text-center relative">
         <div className="absolute inset-0 opacity-40">
                   <Image
-                    src="https://res.cloudinary.com/nextbuildr/image/upload/partner_vlaigl.jpg"
+                    src="https://res.cloudinary.com/nextbuildr/image/upload/f_avif/q_auto:good/dpr_auto/partner_vlaigl.jpg"
                     alt="APC CARES Community"
                     fill
                     className="object-cover object-center opacity-80"

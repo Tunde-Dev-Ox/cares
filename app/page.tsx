@@ -182,7 +182,7 @@ export default function Home() {
           <div className="mx-auto max-w-[900px] flex flex-col-reverse items-center gap-10 md:flex-row-reverse md:gap-16">
             <div className="shrink-0 overflow-hidden rounded-xl shadow-md group">
               <Image
-                src="https://res.cloudinary.com/nextbuildr/image/upload/who-we-are_j10p18.avif"
+                src="https://res.cloudinary.com/nextbuildr/image/upload/f_webp/q_auto:good/dpr_auto/who-we-are_j10p18.avif"
                 alt="APC CARES — Community Access to Resources & Empowerment Services"
                 width={400}
                 height={400}
@@ -220,7 +220,7 @@ export default function Home() {
       <section className="relative overflow-hidden min-h-[400px] flex items-center px-6 py-16 group">
         {/* Background photograph */}
         <Image
-          src="https://res.cloudinary.com/nextbuildr/image/upload/children_ogvn7s.avif"
+          src="https://res.cloudinary.com/nextbuildr/image/upload/f_webp/q_auto:good/dpr_auto/children_ogvn7s.avif"
           alt="People united together in community"
           fill
           className="object-cover object-center transition-transform duration-700 group-hover:scale-105"

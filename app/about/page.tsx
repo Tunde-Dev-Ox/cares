@@ -39,7 +39,7 @@ const commitments = [
     title: "Deliver resources",
     description:
       "Channel education, healthcare, infrastructure support, and economic tools to underserved communities, in line with the Renewed Hope Agenda.",
-    image: "https://res.cloudinary.com/nextbuildr/image/upload/deliver_l0ja4v.avif",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/f_webp/q_auto:good/dpr_auto/deliver_l0ja4v.avif",
     alt: "Community members gathered together outdoors",
   },
   {
@@ -63,7 +63,7 @@ const commitments = [
     title: "Mobilise communities",
     description:
       "Build strong local networks so citizens' needs and voices reach the Party's policy and governance processes.",
-    image: "https://res.cloudinary.com/nextbuildr/image/upload/mobilize_ayjeid.avif",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/f_webp/q_auto:good/dpr_auto/mobilize_ayjeid.avif",
     alt: "People taking part in a community gathering",
   },
   {
@@ -215,6 +215,7 @@ export default function AboutPage() {
                     src={commitment.image}
                     alt={commitment.alt}
                     fill
+                    optimization="true"
                     sizes={index === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 50vw"}
                     className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                   />

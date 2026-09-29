@@ -121,7 +121,7 @@ export function Header() {
             data-analytics-event="cta_click"
             data-analytics-payload={JSON.stringify({ cta: "header_contact_mobile", href: "/contact", source: "header_mobile" })}
             data-analytics-close-menu="true"
-            className="inline-flex items-center justify-center gap-3 bg-[#1e4544] text-white text-[0.82rem] font-extrabold tracking-wider px-5 py-3 mt-2"
+            className="inline-flex items-center justify-center gap-3 bg-[#1e4544] text-white text-[0.82rem] font-extrabold tracking-wider px-5 py-3 mt-2 rounded-[80px]"
           >
             Partner with us <span aria-hidden="true">
               <HiArrowRight />
