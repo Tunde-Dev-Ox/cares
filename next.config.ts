@@ -35,6 +35,11 @@ const nextConfig: NextConfig = {
         pathname: "/**",
         // search omitted → allows any query string (w=, q= params)
       },
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+        pathname: "/**",
+      },
     ],
     qualities: [75, 90],
   },

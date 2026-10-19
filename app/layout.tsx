@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { Header } from "./components/header";
 import { Footer } from "./components/footer";
 import { PostHogProvider } from "@/components/posthog-provider";
+import { getWingNavigation } from "@/lib/contentful";
 import "./globals.css";
 
 const JakartaSans = Plus_Jakarta_Sans({
@@ -66,6 +67,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  return <RootLayoutContent>{children}</RootLayoutContent>;
+}
+
+async function RootLayoutContent({ children }: { children: React.ReactNode }) {
+  const wings = await getWingNavigation();
+
   return (
     <html
       lang="en"
@@ -75,7 +82,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <PostHogProvider />
         </Suspense>
-        <Header />
+        <Header wings={wings} />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

@@ -44,6 +44,15 @@ submissions in separate Supabase tables: `contact_submissions` and
 4. Keep the service-role key server-only. Never prefix it with
 	`NEXT_PUBLIC_` or expose it to browser code.
 
+## Contentful wing pages
+
+Wing pages are served at `/wings/[slug]` from the published `apcCaresWings`
+content type. Set `CONTENTFUL_SPACE_ID`, `CONTENTFUL_ENVIRONMENT` (usually
+`master`), and the server-only `CONTENTFUL_DELIVERY_TOKEN`. The content model
+uses `slug`, `title`, `image`, `challenge`, `approach`, `flagshipProgram`,
+`programmes`, `keyPartners`, `safeguards`, and `change`. Content is cached for
+one hour. The header uses Contentful entry titles and slugs when configured.
+
 The in-process rate limiter is a fallback for a single instance. Production
 deployments with multiple or serverless instances should also apply distributed
 rate limiting at the hosting edge or with Redis/Upstash.
