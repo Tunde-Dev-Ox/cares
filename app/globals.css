@@ -535,36 +535,74 @@ a {
 }
 
 /* 70px face translations for mobile */
-.cube-face.front  { transform: translateZ(35px); }
-.cube-face.back   { transform: rotateY(180deg) translateZ(35px); }
-.cube-face.right  { transform: rotateY(90deg) translateZ(35px); }
-.cube-face.left   { transform: rotateY(-90deg) translateZ(35px); }
-.cube-face.top    { transform: rotateX(90deg) translateZ(35px); }
-.cube-face.bottom { transform: rotateX(-90deg) translateZ(35px); }
+.cube-face.front {
+  transform: translateZ(35px);
+}
+
+.cube-face.back {
+  transform: rotateY(180deg) translateZ(35px);
+}
+
+.cube-face.right {
+  transform: rotateY(90deg) translateZ(35px);
+}
+
+.cube-face.left {
+  transform: rotateY(-90deg) translateZ(35px);
+}
+
+.cube-face.top {
+  transform: rotateX(90deg) translateZ(35px);
+}
+
+.cube-face.bottom {
+  transform: rotateX(-90deg) translateZ(35px);
+}
 
 /* 100px face translations for desktop */
 @media (min-width: 768px) {
-  .cube-face.front  { transform: translateZ(50px); }
-  .cube-face.back   { transform: rotateY(180deg) translateZ(50px); }
-  .cube-face.right  { transform: rotateY(90deg) translateZ(50px); }
-  .cube-face.left   { transform: rotateY(-90deg) translateZ(50px); }
-  .cube-face.top    { transform: rotateX(90deg) translateZ(50px); }
-  .cube-face.bottom { transform: rotateX(-90deg) translateZ(50px); }
+  .cube-face.front {
+    transform: translateZ(50px);
+  }
+
+  .cube-face.back {
+    transform: rotateY(180deg) translateZ(50px);
+  }
+
+  .cube-face.right {
+    transform: rotateY(90deg) translateZ(50px);
+  }
+
+  .cube-face.left {
+    transform: rotateY(-90deg) translateZ(50px);
+  }
+
+  .cube-face.top {
+    transform: rotateX(90deg) translateZ(50px);
+  }
+
+  .cube-face.bottom {
+    transform: rotateX(-90deg) translateZ(50px);
+  }
 }
 
 @keyframes cubeRotate {
   0% {
     transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg);
   }
+
   100% {
     transform: rotateX(380deg) rotateY(360deg) rotateZ(180deg);
   }
 }
 
 @keyframes floatCube {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }

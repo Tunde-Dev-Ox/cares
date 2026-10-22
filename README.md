@@ -1,61 +1,36 @@
-# APC CARES
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A small, static Next.js website for APC CARES, a grassroots support platform
-focused on community connection, citizen engagement, and empowerment.
+## Getting Started
 
-## Local development
-
-Install dependencies and start the development server:
+First, run the development server:
 
 ```bash
-npm install
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in a browser.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Routes
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- `/` - Home
-- `/about` - About APC CARES
-- `/our-work` - Focus areas
-- `/get-involved` - Supporter and volunteer pathway
-- `/style-guide` - Internal visual reference
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Checks
+## Learn More
 
-```bash
-npm run lint
-npm run build
-```
+To learn more about Next.js, take a look at the following resources:
 
-## Form API setup
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-The contact and volunteer forms submit to `/api/contact` and `/api/volunteers`.
-They validate payloads on the server, require same-origin requests and consent,
-reject honeypot submissions, enforce a request limit, and store accepted
-submissions in separate Supabase tables: `contact_submissions` and
-`volunteer_applications`.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-1. Create a Supabase project.
-2. Run [`supabase/schema.sql`](supabase/schema.sql) in the Supabase SQL editor.
-3. Copy `.env.example` to `.env.local` and set `SUPABASE_URL` and
-	`SUPABASE_SERVICE_ROLE_KEY`.
-4. Keep the service-role key server-only. Never prefix it with
-	`NEXT_PUBLIC_` or expose it to browser code.
+## Deploy on Vercel
 
-## Contentful wing pages
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Wing pages are served at `/wings/[slug]` from the published `apcCaresWings`
-content type. Set `CONTENTFUL_SPACE_ID`, `CONTENTFUL_ENVIRONMENT` (usually
-`master`), and the server-only `CONTENTFUL_DELIVERY_TOKEN`. The content model
-uses `slug`, `title`, `image`, `challenge`, `approach`, `flagshipProgram`,
-`programmes`, `keyPartners`, `safeguards`, and `change`. Content is cached for
-one hour. The header uses Contentful entry titles and slugs when configured.
-
-The in-process rate limiter is a fallback for a single instance. Production
-deployments with multiple or serverless instances should also apply distributed
-rate limiting at the hosting edge or with Redis/Upstash.
-
-Confirm all organisation, Party, programme, contact, and brand claims before
-publishing.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

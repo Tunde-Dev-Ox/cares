@@ -248,10 +248,10 @@ export default function MandatePage() {
               Join our network of LGA coordinators, ward volunteer champions, and community partners driving grassroots progress.
             </p>
             <Link
-              href="/get-involved"
+              href="/become-a-member"
               className="inline-flex items-center gap-3 bg-[#1e4544] px-8 py-4 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 shadow-lg rounded-[80px]"
             >
-              Get Involved Today <HiArrowRight size={20} />
+              Become a member <HiArrowRight size={20} />
             </Link>
           </ScrollReveal>
         </div>

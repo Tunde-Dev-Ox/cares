@@ -135,6 +135,28 @@ export const teamMembersData: TeamMember[] = [
     A committed advocate for safe blood, he received the Blood Safety Advocacy Award from the National Blood Transfusion Commission in 2022, among several other honours for service and leadership. 
     
     He is a member of the **NMA, SOFPON, and MDCAN,** and is actively involved in research and free medical outreach.`,
+  },
+  {
+    id: "chinwe-okoli",
+    name: "Prof. Chinwe Edith Okoli, MBBS | FMCA | FWACS | FICS | Professor of Anaesthesia",
+    role: "South East Coordinator, APC CARES",
+    image: "https://res.cloudinary.com/nextbuildr/image/upload/founder8_mjozfq.jpg",
+    extendedBio: `
+    **Professor Chinwe Edith Okoli** is a consultant anaesthesiologist, academic and healthcare executive with nearly three decades of service in Nigerian medicine. A Professor of Anaesthesia at Gregory University Uturu, where she serves as Deputy Provost of the College of Medicine and Health Sciences, she has spent more than 13 years at the Federal Medical Centre, Umuahia, rising to Head of Department, Head of Clinical Services and Training, Chairman of the Medical Advisory Committee, and Acting Medical Director.
+
+    Under her leadership, FMC Umuahia secured simultaneous full accreditation for four departments, a first in the hospital's history. She led the centre's response to a Lassa fever outbreak, established its ICU admission protocols, and kept hospital services running through periods of industrial action.
+
+    Her commitment to communities reaches far beyond the hospital walls. 
+
+    Since 2007, she has served as State Coordinator of the NDDC Free Rural Medical Missions, coordinating more than 35 free medical missions across nine Niger Delta states and Abia State, bringing primary and specialist care to underserved communities. She is also President of God's Delight Medicare Rural Outreach Programme and Senior Pastor of God's Own Power Ministries.
+
+    A dual Fellow of the National Postgraduate Medical College of Nigeria and the West African College of Surgeons, and a Fellow of the International College of Surgeons, Prof. Okoli serves as Faculty Secretary of the NPMCN Faculty of Anaesthesia and as a national examiner. 
+
+    She has supervised 16 fellowship candidates, assessed 34 dissertations, and authored 27 peer-reviewed publications. She also holds management diplomas from ASCON and from the Galilee International Management Institute, Israel.
+
+    At APC CARES, she brings this blend of clinical excellence, institutional leadership and grassroots outreach to the work of connecting Nigerians with health resources and empowerment.
+
+    As South East Coordinator of APC CARES, Prof. Okoli brings deep roots in the region and decades of service to its people. An Abia State indigene born in Anambra State, a graduate of the University of Nigeria, Nsukka, and a leader in Umuahia's healthcare community for over a decade, she combines clinical excellence, institutional leadership and grassroots outreach to connect communities across the South East with the health resources and empowerment opportunities they deserve.`,
   }
 ];
 

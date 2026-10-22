@@ -2,6 +2,7 @@ import Image from "next/image";
 import { HiArrowRight } from "react-icons/hi2";
 import { StatsBand } from "@/app/components/stats-band";
 import { ScrollReveal } from "@/app/components/scroll-reveal";
+import { DonationAccount } from "@/app/components/donation-account";
 import { TrackLink } from "@/components/track-link";
 
 const pillars = [
@@ -56,12 +57,12 @@ export default function Home() {
             </p>
             <div className="mt-6 flex flex-wrap gap-4">
               <TrackLink
-                href="/get-involved"
+                href="/become-a-member"
                 eventName="cta_click"
                 eventProperties={{ cta: "home_volunteer", source: "homepage_hero" }}
                 className="group inline-flex items-center gap-4 bg-[#1e4544] px-8 py-3 text-[0.88rem] font-extrabold tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 hover:shadow-xl shadow-lg shadow-black/30 rounded-[80px]"
               >
-                Volunteer <HiArrowRight size={24} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+                Become a member <HiArrowRight size={24} className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </TrackLink>
               <TrackLink
                 href="/wings"
@@ -86,24 +87,24 @@ export default function Home() {
             Making participation practical, local, and possible.
           </h2>
           <div className="md:max-w-[480px]">
-          <p className="text-[1.05rem] font-medium leading-[1.75] text-[#60736d] max-w-120">
-            APC CARES is an officially recognized support group established to translate
-            the policies and promises of the All Progressives Congress into visible,
-            measurable change at the community level. <br/><br/>We mobilize grassroots energy, foster
-            civic engagement, and connect citizens across the federation with meaningful
-            pathways to empowerment, resources, and sustainable growth.<br/><br/>We are a people-first platform, working to ensure that every Nigerian has the opportunity to participate in the country's progress and prosperity.
-          </p>
-          <br/>
-          <p className="mt-4 md:mt-0">
-            <TrackLink
-              href="/wings"
-              eventName="cta_click"
-              eventProperties={{ cta: "home_view_wings", source: "homepage_intro" }}
-              className="inline-flex items-center gap-2 text-[#1e4544] font-bold underline hover:no-underline"
-            >
-              View our wings <HiArrowRight size={20} />
-            </TrackLink>
-          </p>
+            <p className="text-[1.05rem] font-medium leading-[1.75] text-[#60736d] max-w-120">
+              APC CARES is an officially recognized support group established to translate
+              the policies and promises of the All Progressives Congress into visible,
+              measurable change at the community level. <br /><br />We mobilize grassroots energy, foster
+              civic engagement, and connect citizens across the federation with meaningful
+              pathways to empowerment, resources, and sustainable growth.<br /><br />We are a people-first platform, working to ensure that every Nigerian has the opportunity to participate in the country's progress and prosperity.
+            </p>
+            <br />
+            <p className="mt-4 md:mt-0">
+              <TrackLink
+                href="/about"
+                eventName="cta_click"
+                eventProperties={{ cta: "home_view_wings", source: "homepage_intro" }}
+                className="inline-flex items-center gap-2 text-[#1e4544] font-bold underline hover:no-underline"
+              >
+                Learn more <HiArrowRight size={20} />
+              </TrackLink>
+            </p>
           </div>
         </section>
       </ScrollReveal>
@@ -215,6 +216,8 @@ export default function Home() {
         </ScrollReveal>
       </section>
 
+      <DonationAccount />
+
       {/* ── CTA PANEL ───────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden min-h-[400px] flex items-center px-6 py-16 group">
         {/* Background photograph */}
@@ -246,7 +249,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-4">
               <TrackLink
-                href="/get-involved"
+                href="/become-a-member"
                 eventName="cta_click"
                 eventProperties={{ cta: "home_get_involved", source: "homepage_cta" }}
                 className="group inline-flex items-center gap-4 bg-[#1e4544] px-8 py-2 text-[0.88rem] font-extrabold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 hover:shadow-lg rounded-[80px]"

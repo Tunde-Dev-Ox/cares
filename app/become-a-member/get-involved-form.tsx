@@ -103,7 +103,7 @@ export default function GetInvolvedForm() {
                   How you can contribute
                 </h2>
                 <p className="text-[0.95rem] leading-[1.7] text-[#60736d]">
-                  APC CARES relies on dedicated volunteers across Nigeria&apos;s 8,809 wards to identify needs, verify beneficiaries, and drive local impact.
+                  APC CARES relies on dedicated members across Nigeria&apos;s 8,809 wards to identify needs, verify beneficiaries, and drive local impact.
                 </p>
               </div>
             </ScrollReveal>
@@ -114,9 +114,9 @@ export default function GetInvolvedForm() {
                   <HiUserGroup className="text-2xl text-[#39a452]" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-[#1e4544] text-lg mb-1">Ward Volunteer Champion</h3>
+                  <h3 className="font-extrabold text-[#1e4544] text-lg mb-1">Ward Members Champion</h3>
                   <p className="text-xs text-[#60736d] leading-relaxed">
-                    You can volunteer to work in a wing that matches your skills and interests, helping to mobilize resources and support for local communities.
+                    You can beome a member to work in a wing that matches your skills and interests, helping to mobilize resources and support for local communities.
                   </p>
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default function GetInvolvedForm() {
                 <div>
                   <h3 className="font-extrabold text-[#1e4544] text-lg mb-1">Lead as a coordinator</h3>
                   <p className="text-xs text-[#60736d] leading-relaxed">
-                    If you have prior experience in community mobilization, project management, or volunteer coordination, you can lead a team of volunteers in a state or Wing.
+                    If you have prior experience in community mobilization, project management, or community coordination, you can lead a team of members in a state or Wing.
                   </p>
                 </div>
               </div>
@@ -170,7 +170,7 @@ export default function GetInvolvedForm() {
                       onClick={() => setSubmitted(false)}
                       className="mt-6 bg-[#1e4544] px-6 py-3 rounded-lg text-xs font-extrabold text-white uppercase tracking-wider hover:bg-[#123333]"
                     >
-                      Register Another Volunteer
+                      Register another member
                     </button>
                   </div>
                 ) : (
@@ -185,10 +185,10 @@ export default function GetInvolvedForm() {
                     />
                     <div>
                       <h3 className="text-2xl font-extrabold text-[#1e4544] tracking-tight mb-1">
-                        Volunteer Registration Form
+                        Membership Registration Form
                       </h3>
                       <p className="text-xs text-[#60736d] mb-6">
-                        Complete your details below to join the official APC CARES volunteer roster.
+                        Complete your details below to join the official APC CARES membership roster.
                       </p>
                     </div>
 
@@ -297,7 +297,7 @@ export default function GetInvolvedForm() {
                         onChange={(e) => setFormData({ ...formData, roleInterest: e.target.value })}
                         className="w-full rounded-lg border border-[#c9d8d1] px-4 py-3 text-sm focus:border-[#1e4544] focus:outline-none bg-white"
                       >
-                        <option value="Healthcare Volunteer">Healthcare Volunteer</option>
+                        <option value="Healthcare Volunteer">Healthcare</option>
                         <option value="Education Volunteer">Education Volunteer</option>
                         <option value="Women & Youth Support">Women & Youth Support</option>
                         <option value="Community Mobilization">Community Mobilization</option>
@@ -331,7 +331,7 @@ export default function GetInvolvedForm() {
                         required
                       />
                       <label htmlFor="volunteer-consent" className="text-xs leading-relaxed text-[#60736d]">
-                        I consent to being contacted by APC CARES regarding volunteer opportunities and grassroots engagement.
+                        I consent to being contacted by APC CARES regarding membership opportunities and grassroots engagement.
                       </label>
                     </div>
 
@@ -346,7 +346,7 @@ export default function GetInvolvedForm() {
                       disabled={isSubmitting}
                       className="inline-flex items-center gap-3 bg-[#1e4544] px-6 py-3 text-xs font-extrabold uppercase tracking-wider text-white transition hover:bg-[#123333] disabled:cursor-not-allowed disabled:opacity-60 cursor-pointer rounded-[80px]"
                     >
-                      {isSubmitting ? "Submitting..." : "Register as Volunteer"}
+                      {isSubmitting ? "Submitting..." : "Register as Member"}
                       <HiArrowRight className="text-lg" />
                     </button>
                   </form>

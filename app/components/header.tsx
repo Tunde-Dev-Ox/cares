@@ -12,7 +12,7 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/our-mandate", label: "Our Mandate" },
   { href: "/media-room", label: "Media Room" },
-  { href: "/get-involved", label: "Get Involved" },
+  { href: "/become-a-member", label: "Become a Member" },
 ];
 
 export function Header({ wings }: { wings: WingNavigationItem[] }) {
