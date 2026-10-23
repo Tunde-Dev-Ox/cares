@@ -44,7 +44,7 @@ export default function MemberApplicationForm() {
         source: "become_a_member_page",
       });
 
-      const website = new FormData(e.currentTarget).get("website");
+      const website = new FormData(e.currentTarget).get("company_website");
       const response = await fetch("/api/members", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -178,9 +178,9 @@ export default function MemberApplicationForm() {
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <input
                       type="text"
-                      name="website"
+                      name="company_website"
                       tabIndex={-1}
-                      autoComplete="off"
+                      autoComplete="new-password"
                       aria-hidden="true"
                       className="absolute h-px w-px overflow-hidden opacity-0"
                     />

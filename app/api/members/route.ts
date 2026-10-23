@@ -30,7 +30,7 @@ export async function POST(request: Request) {
   }
 
   if (result.data.website) {
-    return successResponse();
+    return errorResponse("Submission could not be verified. Please refresh and try again.", 400);
   }
 
   const payload = Object.fromEntries(
