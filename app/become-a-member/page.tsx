@@ -1,5 +1,5 @@
 ﻿import type { Metadata } from "next";
-import GetInvolvedForm from "./get-involved-form";
+import MemberApplicationForm from "./memberApplicationForm";
 
 export const metadata: Metadata = {
   title: "Become a member | APC CARES | Grassroots Participation",
@@ -10,6 +10,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function GetInvolvedPage() {
-  return <GetInvolvedForm />;
+export default function MemberApplicationPage() {
+  return <MemberApplicationForm />;
 }

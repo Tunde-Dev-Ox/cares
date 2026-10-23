@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { HiCheckCircle, HiUserGroup, HiSparkles, HiArrowRight, HiMapPin } from "react-icons/hi2";
+import { HiCheckCircle, HiUserGroup, HiSparkles, HiArrowRight } from "react-icons/hi2";
 import { ScrollReveal } from "@/app/components/scroll-reveal";
 import { HeroPattern } from "@/app/components/hero-pattern";
 import { SiHomeassistantcommunitystore } from "react-icons/si";
@@ -15,12 +15,13 @@ const nigerianStates = [
   "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"
 ];
 
-export default function GetInvolvedForm() {
+export default function MemberApplicationForm() {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     fullName: "",
+    voterCardId: "",
     email: "",
     phone: "",
     state: "Lagos",
@@ -37,14 +38,14 @@ export default function GetInvolvedForm() {
     setError("");
 
     try {
-      captureEvent("volunteer_form_submit", {
-        volunteer_role: formData.roleInterest,
+      captureEvent("member_application_form_submit", {
+        roleInterest: formData.roleInterest,
         state: formData.state,
-        source: "get_involved_page",
+        source: "become_a_member_page",
       });
 
       const website = new FormData(e.currentTarget).get("website");
-      const response = await fetch("/api/volunteers", {
+      const response = await fetch("/api/members", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, website }),
@@ -55,15 +56,15 @@ export default function GetInvolvedForm() {
         throw new Error(result?.error || "The registration could not be submitted.");
       }
 
-      captureEvent("volunteer_form_submit_success", {
-        volunteer_role: formData.roleInterest,
+      captureEvent("member_application_form_submit_success", {
+        roleInterest: formData.roleInterest,
         state: formData.state,
       });
       setSubmitted(true);
     } catch (submissionError) {
       const message = submissionError instanceof Error ? submissionError.message : "The registration could not be submitted.";
-      captureEvent("volunteer_form_submit_failed", {
-        volunteer_role: formData.roleInterest,
+      captureEvent("member_application_form_submit_failed", {
+        member_role: formData.roleInterest,
         state: formData.state,
         error_message: message,
       });
@@ -222,6 +223,23 @@ export default function GetInvolvedForm() {
                           className="w-full rounded-lg border border-[#c9d8d1] px-4 py-3 text-sm focus:border-[#1e4544] focus:outline-none"
                         />
                       </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="voter-card-id" className="block text-xs font-extrabold uppercase tracking-wider text-[#1e4544] mb-2">
+                        Voter&apos;s Card ID Number *
+                      </label>
+                      <input
+                        type="text"
+                        id="voter-card-id"
+                        required
+                        autoComplete="off"
+                        maxLength={64}
+                        placeholder="Enter your voter card ID number"
+                        value={formData.voterCardId}
+                        onChange={(e) => setFormData({ ...formData, voterCardId: e.target.value })}
+                        className="w-full rounded-lg border border-[#c9d8d1] px-4 py-3 text-sm focus:border-[#1e4544] focus:outline-none"
+                      />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

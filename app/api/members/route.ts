@@ -5,7 +5,7 @@ import {
   readJson,
   saveSubmission,
   successResponse,
-  volunteerSubmissionSchema,
+  MemberApplicationSubmissionSchema,
 } from "@/lib/forms";
 
 export const runtime = "nodejs";
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     return errorResponse(parsedBody.error ?? "Invalid submission.", 400);
   }
 
-  const result = volunteerSubmissionSchema.safeParse(parsedBody.data);
+  const result = MemberApplicationSubmissionSchema.safeParse(parsedBody.data);
   if (!result.success) {
     return errorResponse("Please check the submitted fields.", 400);
   }
@@ -38,7 +38,7 @@ export async function POST(request: Request) {
   );
 
   try {
-    await saveSubmission("volunteer", payload);
+    await saveSubmission("member", payload);
     return successResponse();
   } catch {
     return errorResponse("The registration could not be saved. Please try again.", 503);

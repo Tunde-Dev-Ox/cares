@@ -20,20 +20,21 @@ export const contactSubmissionSchema = z.object({
   website: z.string().max(200).optional().default(""),
 });
 
-export const volunteerSubmissionSchema = z.object({
+export const MemberApplicationSubmissionSchema = z.object({
   fullName: name,
+  voterCardId: z.string().trim().min(1).max(64),
   email,
   phone: z.string().trim().regex(/^\+?[0-9 ()-]{7,20}$/),
   state: z.string().trim().min(2).max(40),
-  lga: shortText(80).pipe(z.string().min(2)),
+  lga: shortText(80),
   ward: shortText(80),
   roleInterest: z.enum([
-    "Ward Volunteer Champion",
-    "LGA Steering Committee",
-    "Youth & Women Ambassador",
     "Healthcare Volunteer",
-    "Education & Mentorship",
-    "Media & Digital Communications",
+    "Education Volunteer",
+    "Women & Youth Support",
+    "Community Mobilization",
+    "Infrastructure & Advocacy",
+    "Media & Communications",
   ]),
   message: shortText(2000),
   consent: z.literal(true),
@@ -96,7 +97,7 @@ export async function readJson(request: Request) {
 }
 
 export async function saveSubmission(
-  formType: "contact" | "volunteer",
+  formType: "contact" | "member",
   payload: Record<string, unknown>,
 ) {
   const supabaseUrl = process.env.SUPABASE_URL?.replace(/\/$/, "");
@@ -106,27 +107,28 @@ export async function saveSubmission(
     throw new Error("Submission storage is not configured.");
   }
 
-  const table = formType === "contact" ? "contact_submissions" : "volunteer_applications";
+  const table = formType === "contact" ? "contact_submissions" : "member_applications";
   const row = formType === "contact"
     ? {
-        name: payload.name,
-        email: payload.email,
-        subject: payload.subject,
-        category: payload.category,
-        message: payload.message,
-        consent_at: new Date().toISOString(),
-      }
+      name: payload.name,
+      email: payload.email,
+      subject: payload.subject,
+      category: payload.category,
+      message: payload.message,
+      consent_at: new Date().toISOString(),
+    }
     : {
-        full_name: payload.fullName,
-        email: payload.email,
-        phone: payload.phone,
-        state: payload.state,
-        lga: payload.lga,
-        ward: payload.ward,
-        role_interest: payload.roleInterest,
-        message: payload.message,
-        consent_at: new Date().toISOString(),
-      };
+      full_name: payload.fullName,
+      voter_card_id: payload.voterCardId,
+      email: payload.email,
+      phone: payload.phone,
+      state: payload.state,
+      lga: payload.lga,
+      ward: payload.ward,
+      role_interest: payload.roleInterest,
+      message: payload.message,
+      consent_at: new Date().toISOString(),
+    };
 
   const response = await fetch(`${supabaseUrl}/rest/v1/${table}`, {
     method: "POST",

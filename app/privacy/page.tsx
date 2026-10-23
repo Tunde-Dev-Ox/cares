@@ -66,6 +66,7 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[0.92rem] leading-[1.7]">
                 <li>Contact Information: Full name, phone number, email address.</li>
+                <li>Membership Identification: Voter&apos;s card ID number submitted during membership registration.</li>
                 <li>Geopolitical Details: State of residence, Local Government Area (LGA), and Ward name/number.</li>
                 <li>Engagement Preferences: Preferred volunteer role, skill categories, and optional messages.</li>
               </ul>
@@ -81,6 +82,7 @@ export default function PrivacyPage() {
               </p>
               <ul className="list-disc pl-6 space-y-2 text-[0.92rem] leading-[1.7]">
                 <li>Connecting volunteer champions with their respective State and LGA coordination steering teams.</li>
+                <li>Processing and verifying membership registrations.</li>
                 <li>Verifying beneficiaries for official empowerment schemes, medical outreaches, and educational grants.</li>
                 <li>Sending official support group announcements, press releases, and town-hall invitations.</li>
               </ul>
