@@ -60,17 +60,17 @@ export default function Home() {
                 href="/become-a-member"
                 eventName="cta_click"
                 eventProperties={{ cta: "home_volunteer", source: "homepage_hero" }}
-                className="group inline-flex items-center gap-4 bg-[#1e4544] px-8 py-3 text-[0.88rem] font-extrabold tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 hover:shadow-xl shadow-lg shadow-black/30 rounded-[80px]"
+                className="group inline-flex items-center gap-2 bg-[#1e4544] px-8 py-3 text-[0.88rem] font-extrabold tracking-wider text-white transition-all duration-300 hover:bg-[#123333] hover:-translate-y-1 hover:shadow-xl shadow-lg shadow-black/30 rounded-[80px]"
               >
-                Become a member <HiArrowRight size={24} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+                Become a member <HiArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </TrackLink>
               <TrackLink
-                href="/about"
+                href="/wings"
                 eventName="cta_click"
                 eventProperties={{ cta: "home_explore_wings", source: "homepage_hero" }}
-                className="inline-flex items-center gap-4 border border-white/70 px-8 py-2 text-[0.88rem] font-extrabold tracking-wider text-white backdrop-blur-xs transition-all duration-300 hover:bg-white hover:text-[#1e4544] hover:-translate-y-1 hover:shadow-lg rounded-[80px]"
+                className="inline-flex items-center gap-2 border border-white/70 px-8 py-2 text-[0.88rem] font-extrabold tracking-wider text-white backdrop-blur-xs transition-all duration-300 hover:bg-white hover:text-[#1e4544] hover:-translate-y-1 hover:shadow-lg rounded-[80px]"
               >
-                Learn more <HiArrowRight size={24} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+                Explore our wings <HiArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </TrackLink>
             </div>
           </div>
