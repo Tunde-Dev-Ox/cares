@@ -4,11 +4,12 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { FaXTwitter, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa6";
 import { captureEvent } from "@/lib/posthog";
+import Link from "next/link";
 
 const navLinks = [
   { href: "/about", label: "About Us" },
   { href: "/our-mandate", label: "Our Mandate" },
-  { href: "/media-room", label: "Media Room" },
+  // { href: "/media-room", label: "Media Room" },
   { href: "/become-a-member", label: "Become a Member" },
   { href: "/contact", label: "Contact Secretariat" },
 ];
@@ -48,7 +49,7 @@ export function Footer() {
     <footer className="mt-24 border-t border-[#c9d8d1]">
       <div className="mx-auto max-w-310 px-6 py-14 grid grid-cols-1 gap-12 md:grid-cols-3">
         <div>
-          <a href="/" aria-label="APC CARES home" className="inline-block mb-4">
+          <Link href="/" aria-label="APC CARES home" className="inline-block mb-4">
             <Image
               src="/logo.png"
               alt="APC CARES logo"
@@ -56,7 +57,7 @@ export function Footer() {
               height={80}
               className="object-contain"
             />
-          </a>
+          </Link>
           <p className="text-[0.8rem] text-[#60736d] leading-relaxed max-w-65">
             A grassroots-facing support group translating APC policies and
             promises into visible, measurable change at community level.

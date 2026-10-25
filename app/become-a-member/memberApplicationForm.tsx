@@ -76,26 +76,23 @@ export default function MemberApplicationForm() {
 
   return (
     <main className="bg-[#f7f8f3]">
-      {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[#0e2726] py-14 md:py-20 text-white">
         <HeroPattern />
-        <div className="relative z-10 mx-auto max-w-[1240px] px-6">
-          <div className="max-w-[850px]">
+        <div className="relative z-10 mx-auto max-w-310 px-6">
+          <div className="max-w-212.5">
             <span className="mb-4 block w-12 h-1 bg-[#de232b]" />
             <p className="mb-4 text-[0.75rem] font-extrabold uppercase tracking-[0.2em] text-[#de232b]">
               Mobilization & Membership
             </p>
-            <h1 className="text-[clamp(2.5rem,5.5vw,4.5rem)] w-full font-extrabold leading-[0.98] tracking-[-0.05em] text-white">
+            <h1 className="text-[clamp(2.5rem,5.5vw,4.5rem)] w-full font-extrabold leading-[0.98] tracking-tighter text-white">
               Be a part of the movement for grassroots empowerment.
             </h1>
           </div>
         </div>
       </section>
 
-      {/* ── FORM & WAYS TO PARTICIPATE ───────────────────────────────── */}
-      <section className="mx-auto max-w-[1240px] px-6 py-20">
+      <section className="mx-auto max-w-310 px-6 py-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          {/* Left Column: Ways to Participate */}
           <div className="lg:col-span-5 space-y-4">
             <ScrollReveal>
               <div>
@@ -104,7 +101,7 @@ export default function MemberApplicationForm() {
                   How you can contribute
                 </h2>
                 <p className="text-[0.95rem] leading-[1.7] text-[#60736d]">
-                  APC CARES relies on dedicated members across Nigeria&apos;s 8,809 wards to identify needs, verify beneficiaries, and drive local impact.
+                  APC Cares relies on dedicated members across Nigeria&apos;s 8,809 wards to identify needs, verify beneficiaries, and drive local impact.
                 </p>
               </div>
             </ScrollReveal>
@@ -164,7 +161,7 @@ export default function MemberApplicationForm() {
                     <h3 className="text-2xl font-extrabold text-[#1e4544]">
                       Registration Received!
                     </h3>
-                    <p className="text-[#60736d] text-sm max-w-[440px] mx-auto leading-relaxed">
+                    <p className="text-[#60736d] text-sm max-w-110 mx-auto leading-relaxed">
                       Thank you for registering with APC CARES, <strong className="text-[#1e4544]">{formData.fullName}</strong>. Your details have been submitted to the National Mobilization Directorate. Our coordinator for <strong className="text-[#1e4544]">{formData.state} State</strong> will reach out to you shortly.
                     </p>
                     <button

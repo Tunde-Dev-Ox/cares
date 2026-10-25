@@ -62,26 +62,23 @@ export default function ContactForm() {
 
   return (
     <main className="bg-[#f7f8f3]">
-      {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[#0e2726] py-14 md:py-20 text-white">
         <HeroPattern />
-        <div className="relative z-10 mx-auto max-w-[1240px] px-6">
-          <div className="max-w-[780px]">
+        <div className="relative z-10 mx-auto max-w-310 px-6">
+          <div className="max-w-195">
             <span className="mb-4 block w-12 h-1 bg-[#de232b]" />
             <p className="mb-4 text-[0.75rem] font-extrabold uppercase tracking-[0.2em] text-[#de232b]">
               National Secretariat
             </p>
-            <h1 className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-extrabold leading-[0.98] tracking-[-0.05em] text-white">
+            <h1 className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-extrabold leading-[0.98] tracking-tighter text-white">
               Get in touch with APC CARES.
             </h1>
           </div>
         </div>
       </section>
 
-      {/* ── CONTACT CARDS & FORM ─────────────────────────────────────── */}
-      <section className="mx-auto max-w-[1240px] px-6 pt-20">
+      <section className="mx-auto max-w-310 px-6 pt-20">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          {/* Left Column: Secretariat Information */}
           <div className="lg:col-span-5 space-y-6">
             <ScrollReveal>
               <span className="mb-3 block w-10 h-1 bg-[#de232b]" />
@@ -134,7 +131,7 @@ export default function ContactForm() {
                     <h3 className="text-2xl font-extrabold text-[#1e4544]">
                       Message Sent Successfully!
                     </h3>
-                    <p className="text-[#60736d] text-sm max-w-[440px] mx-auto leading-relaxed">
+                    <p className="text-[#60736d] text-sm max-w-110 mx-auto leading-relaxed">
                       Thank you for contacting APC CARES Secretariat. Your message regarding <strong className="text-[#1e4544]">{form.subject || form.category}</strong> has been logged.
                     </p>
                     <button

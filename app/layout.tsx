@@ -29,11 +29,11 @@ const organizationSchema = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.apccares.org"),
-  title: "APC CARES | Grassroots Support & Community Empowerment",
+  title: "APC Cares | Grassroots Support & Community Empowerment",
   description:
-    "APC CARES supports grassroots engagement and community access to resources and empowerment opportunities across Nigeria.",
+    "APC Cares supports grassroots engagement and community access to resources and empowerment opportunities across Nigeria.",
   keywords: [
-    "APC CARES",
+    "APC Cares",
     "APC support group",
     "grassroots empowerment Nigeria",
     "community development Nigeria",
@@ -45,10 +45,10 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "APC CARES | Grassroots Empowerment & Community Support",
+    title: "APC Cares | Grassroots Empowerment & Community Support",
     description:
       "Connecting party vision with grassroots realities and practical opportunities for communities across Nigeria.",
-    siteName: "APC CARES",
+    siteName: "APC Cares",
     locale: "en_NG",
     type: "website",
     url: "https://www.apccares.org/",
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "APC CARES grassroots support and community empowerment",
+        alt: "APC Cares grassroots support and community empowerment",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "APC CARES | Grassroots Empowerment & Community Support",
+    title: "APC Cares | Grassroots Empowerment & Community Support",
     description:
       "Connecting party vision with grassroots realities and practical opportunities for communities across Nigeria.",
     images: ["/opengraph-image"],
@@ -88,6 +88,7 @@ async function RootLayoutContent({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${JakartaSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#f7f8f3] text-[#163331]">

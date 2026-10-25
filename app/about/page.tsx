@@ -1,106 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HiArrowRight, HiCheckCircle, HiUserGroup, HiSparkles, HiGlobeAlt, HiShieldCheck } from "react-icons/hi2";
+import { HiArrowRight, HiCheckCircle } from "react-icons/hi2";
 import { ScrollReveal } from "@/app/components/scroll-reveal";
 import { TeamSection } from "@/app/about/team-section";
+import { coreValues, commitments } from "@/app/staticData";
 
 export const metadata = {
-  title: "About Us | APC CARES — Grassroots Empowerment & Support Group",
+  title: "About Us | APC Cares — Grassroots Empowerment & Support Group",
   description:
-    "Learn about APC CARES (Community Access to Resources & Empowerment Services), an officially recognized APC support group bridging party vision with community impact across Nigeria.",
+    "Learn about APC Cares (Community Access to Resources & Empowerment Services), an officially recognized APC support group bridging party vision with community impact across Nigeria.",
   alternates: {
     canonical: "/about",
   },
 };
 
-const coreValues = [
-  {
-    title: "Grounded in People",
-    desc: "We listen to local realities and prioritize community voices over top-down assumptions.",
-    icon: <HiUserGroup className="text-3xl text-[#1e4544]" />,
-  },
-  {
-    title: "Transparent & Open",
-    desc: "We share clear information about programs, resource allocation, and ways citizens can participate.",
-    icon: <HiShieldCheck className="text-3xl text-[#1e4544]" />,
-  },
-  {
-    title: "Practical Impact",
-    desc: "We move beyond rhetoric to deliver useful support, skills, and direct empowerment pathways.",
-    icon: <HiSparkles className="text-3xl text-[#1e4544]" />,
-  },
-  {
-    title: "Nationwide Unity",
-    desc: "We build bridges across geopolitical zones, connecting urban centers with rural areas.",
-    icon: <HiGlobeAlt className="text-3xl text-[#1e4544]" />,
-  },
-];
-
-const commitments = [
-  {
-    number: "01",
-    title: "Deliver resources",
-    description:
-      "Channel education, healthcare, infrastructure support, and economic tools to underserved communities, in line with the Renewed Hope Agenda.",
-    image: "https://res.cloudinary.com/nextbuildr/image/upload/f_webp/q_auto:good/dpr_auto/deliver_l0ja4v.avif",
-    alt: "Community members gathered together outdoors",
-  },
-  {
-    number: "02",
-    title: "Build capacity",
-    description:
-      "Offer vocational training, entrepreneurship development, financial literacy, and leadership skills so citizens become self-reliant.",
-    image: "https://res.cloudinary.com/nextbuildr/image/upload/capacity_fn6ro7.avif",
-    alt: "Students learning together in a classroom",
-  },
-  {
-    number: "03",
-    title: "Engage stakeholders",
-    description:
-      "Work with APC allies, partners, philanthropists, and corporate sponsors to secure lasting support for community programmes.",
-    image: "https://res.cloudinary.com/nextbuildr/image/upload/stakeholders_wi8qfz.avif",
-    alt: "Colleagues discussing a shared project around a table",
-  },
-  {
-    number: "04",
-    title: "Mobilise communities",
-    description:
-      "Build strong local networks so citizens' needs and voices reach the Party's policy and governance processes.",
-    image: "https://res.cloudinary.com/nextbuildr/image/upload/f_webp/q_auto:good/dpr_auto/mobilize_ayjeid.avif",
-    alt: "People taking part in a community gathering",
-  },
-  {
-    number: "05",
-    title: "Stay transparent",
-    description:
-      "Manage funds and resources to the highest standard and report progress openly.",
-    image: "https://res.cloudinary.com/nextbuildr/image/upload/transparent_awk4lg.avif",
-    alt: "Team reviewing information and plans together",
-  },
-  {
-    number: "06",
-    title: "Raise awareness",
-    description:
-      "Promote community-driven development and the role of empowered citizens in Nigeria's future.",
-    image: "https://res.cloudinary.com/nextbuildr/image/upload/awareness_yjcbqx.avif",
-    alt: "People sharing information through a digital device",
-  },
-  {
-    number: "07",
-    title: "Measure results",
-    description:
-      "Track every programme and adapt to what communities actually need.",
-    image: "https://res.cloudinary.com/nextbuildr/image/upload/results_c9hjgf.avif",
-    alt: "A team reviewing charts and programme results",
-  },
-];
-
 export default function AboutPage() {
   return (
     <main className="overflow-x-hidden bg-[#f7f8f3]">
-      {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[#0e2726] py-14">
-        {/* Background photo overlay */}
         <div className="absolute inset-0 z-0">
           <Image
             src="https://res.cloudinary.com/nextbuildr/image/upload/about_ghgyn0.avif"
@@ -109,16 +26,16 @@ export default function AboutPage() {
             className="object-cover object-center opacity-90"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0e2726] via-[#0e2726]/60 to-[#0e2726]/30" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0e2726] via-[#0e2726]/60 to-[#0e2726]/30" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1240px] px-6">
-          <div className="max-w-[800px]">
+        <div className="relative z-10 mx-auto max-w-310 px-6">
+          <div className="max-w-200">
             <span className="mb-4 block w-12 h-1 bg-[#de232b]" />
             <p className="mb-4 text-[0.75rem] font-extrabold uppercase tracking-[0.2em] text-[#de232b]">
-              About APC CARES
+              About APC Cares
             </p>
-            <h1 className="text-[clamp(2.5rem,5.5vw,4.8rem)] font-extrabold leading-[0.98] tracking-tighter text-white">
+            <h1 className="text-[clamp(2.5rem,5.5vw,4.8rem)] font-extrabold leading-none tracking-tighter text-white">
               Closing the gap between party leadership & everyday realities.
             </h1>
             <div className="mt-8 flex flex-wrap gap-4 pt-2">
@@ -133,8 +50,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── MISSION & VISION (Dual Card Band) ───────────────────────── */}
-      <section className="mx-auto max-w-[1240px] px-6 py-20">
+      <section className="mx-auto max-w-310 px-6 py-20">
         <ScrollReveal>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {/* Mission Card */}
@@ -158,7 +74,6 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Vision Card */}
             <div className="relative overflow-hidden bg-[#eaf1ed] p-8 md:p-12 text-[#1e4544] shadow-lg flex flex-col justify-between border-l-4 border-[#39a452]">
               <div className="absolute right-4 top-4 text-[6rem] font-extrabold opacity-10 text-[#1e4544] select-none">
                 02
@@ -182,19 +97,18 @@ export default function AboutPage() {
         </ScrollReveal>
       </section>
 
-      {/* ── WHAT WE DO ──────────────────────────────────────────────── */}
-      <section className="mx-auto max-w-[1240px] px-6 py-16 md:py-24">
+      <section className="mx-auto max-w-310 px-6 py-16 md:py-24">
         <ScrollReveal>
           <div className="mb-10 flex flex-col gap-5 border-b border-[#c9d8d1] pb-8 md:mb-12 md:flex-row  md:justify-between">
             <div>
               <p className="mb-3 text-[0.72rem] font-extrabold uppercase tracking-[0.18em] text-[#de232b]">
                 Our work in practice
               </p>
-              <h2 className="max-w-[650px] text-[clamp(2.2rem,4vw,3.6rem)] font-extrabold leading-[1] text-[#1e4544]">
+              <h2 className="max-w-162.5 text-[clamp(2.2rem,4vw,3.6rem)] font-extrabold leading-none text-[#1e4544]">
                 What we do
               </h2>
             </div>
-            <p className="max-w-[430px] text-[0.96rem] leading-[1.75] text-[#60736d]">
+            <p className="max-w-107.5 text-[0.96rem] leading-[1.75] text-[#60736d]">
               We work with APC allies, corporate sponsors, philanthropists, diaspora networks, and government agencies. Together, we carry the Renewed Hope Agenda from policy to people.
             </p>
           </div>
@@ -211,7 +125,7 @@ export default function AboutPage() {
                 className={`group h-full border border-[#d6dad8a1] bg-white transition-colors duration-300 ${index === 0 ? "md:grid md:grid-cols-2" : ""
                   }`}
               >
-                <div className={`relative aspect-[16/10] overflow-hidden bg-[#eaf1ed] ${index === 0 ? "md:aspect-auto md:min-h-[320px]" : ""}`}>
+                <div className={`relative aspect-16/10 overflow-hidden bg-[#eaf1ed] ${index === 0 ? "md:aspect-auto md:min-h-80" : ""}`}>
                   <Image
                     src={commitment.image}
                     alt={commitment.alt}
@@ -237,14 +151,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── TEAM SECTION (Interactive Slide-Over Drawer) ───────────────── */}
       <TeamSection />
 
-      {/* ── OPERATING PHILOSOPHY ──────────────────────────────────────── */}
       <section className="bg-[#eaf1ed] py-20 px-6">
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto max-w-310">
           <ScrollReveal>
-            <div className="mb-14 text-center max-w-[600px] mx-auto">
+            <div className="mb-14 text-center max-w-150 mx-auto">
               <p className="mb-2 text-[0.72rem] font-extrabold uppercase tracking-[0.2em] text-[#de232b]">
                 How We Operate
               </p>
@@ -255,20 +167,25 @@ export default function AboutPage() {
           </ScrollReveal>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {coreValues.map((val, idx) => (
-              <ScrollReveal key={val.title} delay={idx * 100}>
-                <div className="bg-white p-7 rounded-xl shadow-xs transition-all duration-300 hover:-translate-y-1">
-                  <div className="mb-4">{val.icon}</div>
-                  <h3 className="text-lg font-extrabold text-[#1e4544] mb-2">{val.title}</h3>
-                  <p className="text-[0.86rem] leading-[1.65] text-[#60736d]">{val.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
+            {coreValues.map((val, idx) => {
+              const Icon = val.icon;
+
+              return (
+                <ScrollReveal key={val.title} delay={idx * 100}>
+                  <div className="bg-white p-7 rounded-xl shadow-xs transition-all duration-300 hover:-translate-y-1">
+                    <div className="mb-4">
+                      <Icon className="text-3xl text-[#1e4544]" />
+                    </div>
+                    <h3 className="text-lg font-extrabold text-[#1e4544] mb-2">{val.title}</h3>
+                    <p className="text-[0.86rem] leading-[1.65] text-[#60736d]">{val.desc}</p>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* ── CTA BANNER ────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[#0e2726] py-20 px-6 text-white text-center">
         <div className="absolute inset-0 opacity-40">
           <Image
@@ -279,13 +196,13 @@ export default function AboutPage() {
             priority
           />
         </div>
-        <div className="relative z-10 mx-auto max-w-[760px]">
+        <div className="relative z-10 mx-auto max-w-190">
           <ScrollReveal>
             <span className="mb-4 block w-10 h-1 bg-[#de232b] mx-auto" />
-            <h2 className="text-[clamp(2.2rem,4.5vw,3.8rem)] font-extrabold leading-[1] tracking-tight mb-6">
+            <h2 className="text-[clamp(2.2rem,4.5vw,3.8rem)] font-extrabold leading-none tracking-tight mb-6">
               Be a part of the movement for grassroots empowerment.
             </h2>
-            <p className="text-[1.05rem] leading-[1.75] text-[#c5d7d1] mb-8 max-w-[600px] mx-auto">
+            <p className="text-[1.05rem] leading-[1.75] text-[#c5d7d1] mb-8 max-w-150 mx-auto">
               We welcome APC organs and allies, corporate sponsors and CSR programmes, philanthropic foundations, diaspora networks, and government agencies.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

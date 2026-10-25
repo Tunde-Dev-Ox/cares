@@ -11,7 +11,7 @@ import type { WingNavigationItem } from "@/lib/contentful";
 const links = [
   { href: "/about", label: "About" },
   { href: "/our-mandate", label: "Our Mandate" },
-  { href: "/media-room", label: "Media Room" },
+  // { href: "/media-room", label: "Media Room" },
   { href: "/become-a-member", label: "Become a Member" },
 ];
 
@@ -62,7 +62,7 @@ export function Header({ wings }: { wings: WingNavigationItem[] }) {
 
         <nav className="hidden md:flex items-center gap-2" aria-label="Main navigation">
           {links.slice(0, 1).map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               data-analytics-event="nav_click"
@@ -74,7 +74,7 @@ export function Header({ wings }: { wings: WingNavigationItem[] }) {
                 aria-hidden="true"
                 className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-[#de232b] transition-transform duration-300 ease-out group-focus-visible:scale-x-100 motion-reduce:transition-none"
               />
-            </a>
+            </Link>
           ))}
           <div className="relative">
             <button
@@ -95,7 +95,7 @@ export function Header({ wings }: { wings: WingNavigationItem[] }) {
                 className="absolute left-0 top-full z-50 mt-2 grid w-72 gap-1 rounded-md border border-[#c9d8d1] bg-[#f7f8f3] p-2 shadow-lg"
               >
                 {wings.map((wing) => (
-                  <a
+                  <Link
                     key={wing.slug}
                     href={`/wings/${wing.slug}`}
                     data-analytics-event="nav_click"
@@ -103,13 +103,13 @@ export function Header({ wings }: { wings: WingNavigationItem[] }) {
                     className="rounded-sm px-3 py-2 text-sm font-semibold text-[#1e4544] transition-colors hover:bg-[#eaf1ed] hover:text-[#de232b] focus-visible:bg-[#eaf1ed] focus-visible:outline-none"
                   >
                      {wing.title.charAt(0).toUpperCase() + wing.title.slice(1)} wing
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
           </div>
           {links.slice(1).map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               data-analytics-event="nav_click"
@@ -121,18 +121,18 @@ export function Header({ wings }: { wings: WingNavigationItem[] }) {
                 aria-hidden="true"
                 className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-[#de232b] transition-transform duration-300 ease-out group-focus-visible:scale-x-100 motion-reduce:transition-none"
               />
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a
+        <Link
           href="/contact"
           data-analytics-event="cta_click"
           data-analytics-payload={JSON.stringify({ cta: "header_contact", href: "/contact", source: "header" })}
           className="hidden md:inline-flex items-center gap-3 bg-[#1e4544] text-white text-[0.85rem] font-extrabold tracking-wider px-5 py-3 transition-all duration-200 hover:bg-[#123333] hover:-translate-y-0.5 rounded-[80px]"
         >
           Partner with us <span aria-hidden="true"><HiArrowRight size={20} className="text-white" /></span>
-        </a>
+        </Link>
 
         <button
           onClick={() => setOpen((v) => !v)}
@@ -146,7 +146,7 @@ export function Header({ wings }: { wings: WingNavigationItem[] }) {
       {open && (
         <div className="md:hidden border-t border-[#c9d8d1]/60 bg-[#f7f8f3] px-6 py-5 flex flex-col gap-5 -z-50">
           {links.slice(0, 1).map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               data-analytics-event="nav_click"
@@ -159,7 +159,7 @@ export function Header({ wings }: { wings: WingNavigationItem[] }) {
                 aria-hidden="true"
                 className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-[#de232b] transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
               />
-            </a>
+            </Link>
           ))}
           <div>
             <button
@@ -177,7 +177,7 @@ export function Header({ wings }: { wings: WingNavigationItem[] }) {
             {wingsOpen && (
               <div id="mobile-header-wings-menu" className="mt-2 flex flex-col gap-2 border-l-2 border-[#c9d8d1] pl-4">
                 {wings.map((wing) => (
-                  <a
+                  <Link
                     key={wing.slug}
                     href={`/wings/${wing.slug}`}
                     data-analytics-event="nav_click"
@@ -186,13 +186,13 @@ export function Header({ wings }: { wings: WingNavigationItem[] }) {
                     className="w-fit py-1 text-sm font-semibold text-[#1e4544] hover:text-[#de232b] focus-visible:text-[#de232b]"
                   >
                     {wing.title.charAt(0).toUpperCase() + wing.title.slice(1)} wing
-                  </a>
+                  </Link>
                 ))}
               </div>
             )}
           </div>
           {links.slice(1).map((l) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               data-analytics-event="nav_click"
@@ -205,9 +205,9 @@ export function Header({ wings }: { wings: WingNavigationItem[] }) {
                 aria-hidden="true"
                 className="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-[#de232b] transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 motion-reduce:transition-none"
               />
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href="/contact"
             data-analytics-event="cta_click"
             data-analytics-payload={JSON.stringify({ cta: "header_contact_mobile", href: "/contact", source: "header_mobile" })}
@@ -217,7 +217,7 @@ export function Header({ wings }: { wings: WingNavigationItem[] }) {
             Partner with us <span aria-hidden="true">
               <HiArrowRight />
             </span>
-          </a>
+          </Link>
         </div>
       )}
     </header>

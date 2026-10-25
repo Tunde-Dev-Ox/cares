@@ -1,12 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import { BLOCKS, type Block, type Document, type Inline } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { HeroPattern } from "@/app/components/hero-pattern";
 import { getWingBySlug, type ContentfulAsset } from "@/lib/contentful";
-import { IoMdArrowBack } from "react-icons/io";
 
 type WingPageProps = {
     params: Promise<{ slug: string }>;

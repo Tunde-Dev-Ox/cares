@@ -1,13 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
-import { HiArrowRight, HiNewspaper, HiArrowDownTray, HiCheckCircle, HiEnvelope, HiCalendar } from "react-icons/hi2";
+// import Link from "next/link";
+import { HiArrowRight, HiCheckCircle, HiEnvelope, HiCalendar } from "react-icons/hi2";
 import { ScrollReveal } from "@/app/components/scroll-reveal";
 import { HeroPattern } from "@/app/components/hero-pattern";
 
 export const metadata = {
-  title: "Media Room | APC CARES — Official Press Statements & News",
+  title: "Media Room | APC Cares — Official Press Statements & News",
   description:
-    "Official press center, announcements, and media statements from APC CARES following official approval as a recognized APC support group.",
+    "Official press center, announcements, and media statements from APC Cares following official approval as a recognized APC support group.",
   alternates: {
     canonical: "/media-room",
   },
@@ -21,7 +20,7 @@ const pressReleases = [
     category: "Official Statement",
     featured: true,
     excerpt:
-      "The national leadership of the All Progressives Congress (APC) has formally granted approval and recognition to APC CARES as an official party support group. The foundation is authorized to coordinate grassroots mobilization, citizen empowerment, and policy outreach across Nigeria's 36 states and 774 Local Government Areas.",
+      "The national leadership of the All Progressives Congress (APC) has formally granted approval and recognition to APC Cares as an official party support group. The foundation is authorized to coordinate grassroots mobilization, citizen empowerment, and policy outreach across Nigeria's 36 states and 774 Local Government Areas.",
     readTime: "3 min read",
   },
 ];
@@ -32,13 +31,13 @@ export default function MediaRoomPage() {
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[#0e2726] py-14 md:py-20 text-white">
         <HeroPattern />
-        <div className="relative z-10 mx-auto max-w-[1240px] px-6">
-          <div className="max-w-[780px]">
+        <div className="relative z-10 mx-auto max-w-310 px-6">
+          <div className="max-w-195">
             <span className="mb-4 block w-12 h-1 bg-[#de232b]" />
             <p className="mb-4 text-[0.75rem] font-extrabold uppercase tracking-[0.2em] text-[#de232b]">
               Media Room & Press Center
             </p>
-            <h1 className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-extrabold leading-[0.98] tracking-[-0.05em] text-white">
+            <h1 className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-extrabold leading-[0.98] tracking-tighter text-white">
               Official statements, press releases & brand assets.
             </h1>
           </div>
@@ -46,12 +45,12 @@ export default function MediaRoomPage() {
       </section>
 
       {/* ── FEATURED ANNOUNCEMENT (Official Approval Milestone) ─────── */}
-      <section className="mx-auto max-w-[1240px] px-6 py-16">
+      <section className="mx-auto max-w-310 px-6 py-16">
         <ScrollReveal>
           <div className="bg-[#1e4544] rounded-2xl p-8 md:p-12 text-white shadow-xl relative overflow-hidden">
-            <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-10 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-10 bg-linear-to-l from-white to-transparent pointer-events-none" />
 
-            <div className="relative z-10 max-w-[840px]">
+            <div className="relative z-10 max-w-210">
               <div className="flex flex-wrap items-center gap-3 mb-4">
                 <span className="bg-[#de232b] text-white text-[0.72rem] font-extrabold uppercase tracking-wider px-3.5 py-1 rounded-full">
                   Official Milestone
@@ -82,8 +81,7 @@ export default function MediaRoomPage() {
         </ScrollReveal>
       </section>
 
-      {/* ── PRESS RELEASES LIST ──────────────────────────────────────── */}
-      <section className="mx-auto max-w-[1240px] px-6 py-12">
+      <section className="mx-auto max-w-310 px-6 py-12">
         <ScrollReveal>
           <div className="mb-12">
             <h3 className="text-2xl font-extrabold text-[#1e4544] tracking-tight mb-2">
@@ -99,7 +97,7 @@ export default function MediaRoomPage() {
           {pressReleases.map((news, idx) => (
             <ScrollReveal key={news.id} delay={idx * 100}>
               <article className="bg-white p-6 md:p-8 rounded-xl border border-[#c9d8d1]/60 shadow-xs transition-all duration-300 hover:shadow-md hover:border-[#1e4544] flex flex-col md:flex-row md:items-center justify-between gap-6">
-                <div className="max-w-[760px]">
+                <div className="max-w-190">
                   <div className="flex items-center gap-3 text-xs font-bold text-[#60736d] mb-2">
                     <span className="text-[#de232b] uppercase tracking-wider">{news.category}</span>
                     <span>•</span>
@@ -125,9 +123,8 @@ export default function MediaRoomPage() {
         </div>
       </section>
 
-      {/* ── MEDIA CONTACT BANNER ──────────────────────────────────────── */}
       <section className="bg-[#0e2726] py-16 px-6 text-white text-center">
-        <div className="mx-auto max-w-[640px]">
+        <div className="mx-auto max-w-160">
           <ScrollReveal>
             <HiEnvelope className="text-4xl text-[#5cc3e6] mx-auto mb-4" />
             <h3 className="text-2xl font-extrabold mb-2 text-white">

@@ -15,24 +15,22 @@ export const metadata = {
 export default function TermsPage() {
   return (
     <main className="bg-[#f7f8f3]">
-      {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-[#0e2726] py-14 md:py-20 text-white">
         <HeroPattern />
-        <div className="relative z-10 mx-auto max-w-[1240px] px-6">
-          <div className="max-w-[780px]">
+        <div className="relative z-10 mx-auto max-w-310 px-6">
+          <div className="max-w-195">
             <span className="mb-4 block w-12 h-1 bg-[#de232b]" />
             <p className="mb-4 text-[0.75rem] font-extrabold uppercase tracking-[0.2em] text-[#de232b]">
               Governance & Compliance
             </p>
-            <h1 className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-extrabold leading-[0.98] tracking-[-0.05em] text-white">
+            <h1 className="text-[clamp(2.5rem,5.5vw,4.5rem)] font-extrabold leading-[0.98] tracking-tighter text-white">
               Terms of Use
             </h1>
           </div>
         </div>
       </section>
 
-      {/* ── CONTENT SECTION ──────────────────────────────────────────── */}
-      <section className="mx-auto max-w-[1240px] px-6 py-16">
+      <section className="mx-auto max-w-310 px-6 py-16">
         <ScrollReveal>
           <div className="bg-white p-8 md:p-12 rounded-2xl border border-[#c9d8d1]/60 space-y-8 text-[#60736d]">
             <div className="pb-6 border-b border-[#c9d8d1]/60 flex items-center justify-between flex-wrap gap-4">
@@ -49,7 +47,6 @@ export default function TermsPage() {
               </span>
             </div>
 
-            {/* Section 1 */}
             <div>
               <h2 className="text-xl font-extrabold text-[#1e4544] mb-3">
                 1. Acceptance of Terms
@@ -59,7 +56,6 @@ export default function TermsPage() {
               </p>
             </div>
 
-            {/* Section 2 */}
             <div>
               <h2 className="text-xl font-extrabold text-[#1e4544] mb-3">
                 2. Support Group Mandate & Alignment
@@ -69,7 +65,6 @@ export default function TermsPage() {
               </p>
             </div>
 
-            {/* Section 3 */}
             <div>
               <h2 className="text-xl font-extrabold text-[#1e4544] mb-3">
                 3. Code of Conduct for Volunteers & Coordinators
@@ -84,7 +79,6 @@ export default function TermsPage() {
               </ul>
             </div>
 
-            {/* Section 4 */}
             <div>
               <h2 className="text-xl font-extrabold text-[#1e4544] mb-3">
                 4. Intellectual Property & Brand Integrity
@@ -94,7 +88,6 @@ export default function TermsPage() {
               </p>
             </div>
 
-            {/* Section 5 */}
             <div className="pt-6 border-t border-[#c9d8d1]/60">
               <h2 className="text-xl font-extrabold text-[#1e4544] mb-3">
                 5. Governance & Compliance Inquiries

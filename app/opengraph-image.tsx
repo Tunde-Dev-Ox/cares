@@ -25,7 +25,7 @@ export default function OpenGraphImage() {
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
                     <span style={{ color: "#5cc3e6", fontSize: 22, fontWeight: 700 }}>
-                        COMMUNITY ACCESS TO RESOURCES &amp; EMPOWERMENT SERVICES
+                        Community access to resources &amp; empowerment services
                     </span>
                     <span style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.08, maxWidth: 980 }}>
                         Grassroots support. Community empowerment.

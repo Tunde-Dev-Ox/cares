@@ -7,9 +7,9 @@ export default function NotFound() {
     <main className="relative bg-[#0e2726] min-h-[75vh] flex items-center justify-center py-20 px-6 text-white text-center overflow-hidden">
       <HeroPattern />
 
-      <div className="relative z-10 max-w-[600px] mx-auto space-y-6">
+      <div className="relative z-10 max-w-150 mx-auto space-y-6">
         <span className="mb-2 block w-12 h-1 bg-[#de232b] mx-auto" />
-        
+
         <p className="text-7xl font-extrabold text-[#de232b] tracking-tighter leading-none">
           404
         </p>
@@ -18,7 +18,7 @@ export default function NotFound() {
           Page Not Found
         </h1>
 
-        <p className="text-[1rem] leading-[1.75] text-[#c5d7d1] max-w-[480px] mx-auto">
+        <p className="text-[1rem] leading-[1.75] text-[#c5d7d1] max-w-120 mx-auto">
           The page or resource you are looking for might have been moved, renamed, or is temporarily unavailable.
         </p>
 

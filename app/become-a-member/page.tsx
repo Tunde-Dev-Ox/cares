@@ -2,9 +2,9 @@
 import MemberApplicationForm from "./memberApplicationForm";
 
 export const metadata: Metadata = {
-  title: "Become a member | APC CARES | Grassroots Participation",
+  title: "Become a member | APC Cares | Grassroots Participation",
   description:
-    "Join APC CARES to support community mobilisation, grassroots empowerment, and practical development across Nigeria.",
+    "Join APC Cares to support community mobilisation, grassroots empowerment, and practical development across Nigeria.",
   alternates: {
     canonical: "/become-a-member",
   },

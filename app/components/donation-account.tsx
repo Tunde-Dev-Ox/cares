@@ -22,7 +22,7 @@ export function DonationAccount() {
 
     return (
         <section
-            className="bg-surface-muted px-6 py-[76px]"
+            className="bg-surface-muted px-6 py-19"
             aria-labelledby="donation-title"
         >
             <div className="mx-auto grid max-w-310 grid-cols-1 items-center gap-9 md:grid-cols-[minmax(0,0.9fr)_minmax(380px,1.1fr)] md:gap-14">
@@ -93,7 +93,7 @@ export function DonationAccount() {
                             </dd>
                         </div>
                     </dl>
-                    <p className="mt-2 min-h-[18px] text-xs text-muted" aria-live="polite">
+                    <p className="mt-2 min-h-4.5 text-xs text-muted" aria-live="polite">
                         {copied
                             ? "Account number copied."
                             : copyFailed
