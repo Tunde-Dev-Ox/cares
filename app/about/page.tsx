@@ -8,6 +8,9 @@ export const metadata = {
   title: "About Us | APC CARES — Grassroots Empowerment & Support Group",
   description:
     "Learn about APC CARES (Community Access to Resources & Empowerment Services), an officially recognized APC support group bridging party vision with community impact across Nigeria.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const coreValues = [
@@ -205,9 +208,8 @@ export default function AboutPage() {
               className={index === 0 ? "md:col-span-2" : ""}
             >
               <article
-                className={`group h-full border border-[#d6dad8a1] bg-white transition-colors duration-300 ${
-                  index === 0 ? "md:grid md:grid-cols-2" : ""
-                }`}
+                className={`group h-full border border-[#d6dad8a1] bg-white transition-colors duration-300 ${index === 0 ? "md:grid md:grid-cols-2" : ""
+                  }`}
               >
                 <div className={`relative aspect-[16/10] overflow-hidden bg-[#eaf1ed] ${index === 0 ? "md:aspect-auto md:min-h-[320px]" : ""}`}>
                   <Image

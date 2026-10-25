@@ -7,6 +7,9 @@ export const metadata = {
   title: "Privacy Policy | APC CARES — Data Protection & Privacy",
   description:
     "Learn about APC CARES data protection guidelines, volunteer privacy commitments, and information stewardship.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {

@@ -12,14 +12,26 @@ const JakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
 });
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "APC CARES",
+  alternateName: "Community Access to Resources & Empowerment Services",
+  url: "https://www.apccares.org",
+  logo: "https://www.apccares.org/logo.png",
+  sameAs: [
+    "https://x.com/apccares",
+    "https://web.facebook.com/profile.php?id=61594507993276",
+    "https://www.instagram.com/apccares/",
+    "https://www.youtube.com/channel/UCc38qTsxAXDRbeH1IgTjWWQ",
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.apccares.org"),
-  title: {
-    default: "APC CARES | Grassroots Empowerment, Community Support & National Development",
-    template: "%s | APC CARES",
-  },
+  title: "APC CARES | Grassroots Support & Community Empowerment",
   description:
-    "APC CARES is a grassroots support group connecting communities across Nigeria with empowerment, civic engagement, resources, and practical opportunities for local development.",
+    "APC CARES supports grassroots engagement and community access to resources and empowerment opportunities across Nigeria.",
   keywords: [
     "APC CARES",
     "APC support group",
@@ -42,10 +54,10 @@ export const metadata: Metadata = {
     url: "https://www.apccares.org/",
     images: [
       {
-        url: "/logo.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "APC CARES logo",
+        alt: "APC CARES grassroots support and community empowerment",
       },
     ],
   },
@@ -54,7 +66,7 @@ export const metadata: Metadata = {
     title: "APC CARES | Grassroots Empowerment & Community Support",
     description:
       "Connecting party vision with grassroots realities and practical opportunities for communities across Nigeria.",
-    images: ["/logo.png"],
+    images: ["/opengraph-image"],
     creator: "@apccares",
   },
   icons: {
@@ -79,6 +91,10 @@ async function RootLayoutContent({ children }: { children: React.ReactNode }) {
       className={`${JakartaSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#f7f8f3] text-[#163331]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Suspense fallback={null}>
           <PostHogProvider />
         </Suspense>

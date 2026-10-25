@@ -7,6 +7,9 @@ export const metadata = {
   title: "Our Mandate | APC CARES — Strategic Roadmap & Focus Areas",
   description:
     "Explore the strategic mandate, 6 thematic pillars, and 774 LGA execution framework of APC CARES, an officially approved APC support group.",
+  alternates: {
+    canonical: "/our-mandate",
+  },
 };
 
 const pillarsDetail = [
@@ -230,14 +233,14 @@ export default function MandatePage() {
       {/* ── CTA BANNER ────────────────────────────────────────────────── */}
       <section className="bg-[#0e2726] py-20 px-6 text-white text-center relative">
         <div className="absolute inset-0 opacity-40">
-                  <Image
-                    src="https://res.cloudinary.com/nextbuildr/image/upload/f_avif/q_auto:good/dpr_auto/partner_vlaigl.jpg"
-                    alt="APC CARES Community"
-                    fill
-                    className="object-cover object-center opacity-80"
-                    priority
-                  />
-                </div>
+          <Image
+            src="https://res.cloudinary.com/nextbuildr/image/upload/f_avif/q_auto:good/dpr_auto/partner_vlaigl.jpg"
+            alt="APC CARES Community"
+            fill
+            className="object-cover object-center opacity-80"
+            priority
+          />
+        </div>
         <div className="mx-auto max-w-[760px]">
           <ScrollReveal>
             <span className="mb-4 block w-10 h-1 bg-[#de232b] mx-auto" />

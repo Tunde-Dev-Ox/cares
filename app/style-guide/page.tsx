@@ -1,3 +1,13 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Internal Style Guide | APC CARES",
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
+
 const swatches = [
   { name: "Primary", value: "#1E4544", className: "swatch-primary" },
   { name: "Red accent", value: "#DE232B", className: "swatch-red" },

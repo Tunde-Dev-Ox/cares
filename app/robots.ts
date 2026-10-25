@@ -6,7 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://www.apccares.org/sitemap.xml",
-    host: "https://www.apccares.org",
+    sitemap: `${(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.apccares.org").replace(/\/+$/, "")}/sitemap.xml`,
   };
 }

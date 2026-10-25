@@ -8,6 +8,9 @@ export const metadata = {
   title: "Media Room | APC CARES — Official Press Statements & News",
   description:
     "Official press center, announcements, and media statements from APC CARES following official approval as a recognized APC support group.",
+  alternates: {
+    canonical: "/media-room",
+  },
 };
 
 const pressReleases = [

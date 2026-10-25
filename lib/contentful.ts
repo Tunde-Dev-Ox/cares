@@ -102,6 +102,20 @@ async function fetchWingEntries(slug?: string): Promise<ContentfulResponse | nul
   return (await response.json()) as ContentfulResponse;
 }
 
+export async function getPublishedWingSlugs(): Promise<string[]> {
+  try {
+    const result = await fetchWingEntries();
+    const slugs = (result?.items ?? [])
+      .map((entry) => entry.fields?.slug)
+      .filter((slug): slug is string => typeof slug === "string" && slug.trim().length > 0)
+      .map((slug) => slug.trim());
+
+    return [...new Set(slugs)];
+  } catch {
+    return [];
+  }
+}
+
 function toDocument(value: unknown): Document | null {
   if (
     typeof value === "object" &&

@@ -7,6 +7,9 @@ export const metadata = {
   title: "Terms of Use | APC CARES — Official Terms & Governance",
   description:
     "Read the terms of use, code of conduct, and governance guidelines for APC CARES support group members and website visitors.",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsPage() {

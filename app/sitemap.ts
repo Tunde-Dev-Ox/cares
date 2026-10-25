@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
+import { getPublishedWingSlugs } from "@/lib/contentful";
 
 const routes = [
   "",
   "/about",
   "/contact",
-  "/get-involved",
+  "/become-a-member",
   "/media-room",
   "/our-mandate",
   "/our-work",
@@ -13,13 +14,12 @@ const routes = [
   "/wings",
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.apccares.org";
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.apccares.org").replace(/\/+$/, "");
+  const wingSlugs = await getPublishedWingSlugs();
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.7,
-  }));
+  return [
+    ...routes.map((route) => ({ url: `${baseUrl}${route}` })),
+    ...wingSlugs.map((slug) => ({ url: `${baseUrl}/wings/${slug}` })),
+  ];
 }
